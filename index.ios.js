@@ -9,13 +9,12 @@ import {
   AppRegistry
 } from 'react-native';
 import SplashScreen from "rn-splash-screen";
-import StartScreen from './components/startScreen.js'
-import MainScreen from './components/mainScreen.js'
+import InitScreen from './components/initScreen.js'
 SplashScreen.hide();
 class ComradeApp extends Component {
   render() {
     return (
-      <MainScreen />
+      <InitScreen />
     );
   }
 }

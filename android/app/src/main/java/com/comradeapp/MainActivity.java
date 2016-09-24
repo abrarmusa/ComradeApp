@@ -1,6 +1,7 @@
 package com.comradeapp;
 
 import com.facebook.react.ReactActivity;
+import com.BV.LinearGradient.LinearGradientPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.mehcode.reactnative.splashscreen.SplashScreenPackage;
 import com.oblador.vectoricons.VectorIconsPackage;

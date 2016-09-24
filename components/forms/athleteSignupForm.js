@@ -2,7 +2,7 @@ import React, { Component, } from 'react'
 import { View, StyleSheet, TouchableHighlight, TouchableOpacity, Text, PixelRatio, Image, Platform} from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { Icon } from 'react-native-elements'
-
+import Router from '../router'
 import ImagePicker from 'react-native-image-picker';
 var t = require('tcomb-form-native');
 
@@ -74,39 +74,39 @@ var athlete_options = {
     },
     password: {
       password: true,
-//       secureTextEntry: true,
-placeholder: 'Enter a password',
-placeholderTextColor:'gray'      
-},
-height:{
-  placeholder: 'Your height eg. 5 ft 9 in',
-  placeholderTextColor:'gray'      
-},
-weight:{
-  placeholder: 'Your weight eg. 284 lbs',
-  placeholderTextColor:'gray'      
-},
-gym:{
-  placeholder: 'Your gym location eg. YMCA Sheppard & Bayview, Toronto',
-  placeholderTextColor:'gray'      
-},
-style: {
-  placeholder: 'Your Training Style',
-  placeholderTextColor:'gray',
-  nullOption: {value: '', text: 'Pick your type of training'}
-},
-certifications: {
-  placeholder: 'Your certifications eg. BCWA certification',
-  placeholderTextColor:'gray'
-},
-achievements: {
-  placeholder: 'Your achievements eg. 485lb deadlift, 325lb bench',
-  placeholderTextColor:'gray'
-},
-interested_in: {
-  nullOption: {value: '', text: 'Are you looking for a comrade or a trainer'}
-}
-}
+      //       secureTextEntry: true,
+      placeholder: 'Enter a password',
+      placeholderTextColor:'gray'      
+    },
+    height:{
+      placeholder: 'Your height eg. 5 ft 9 in',
+      placeholderTextColor:'gray'      
+    },
+    weight:{
+      placeholder: 'Your weight eg. 284 lbs',
+      placeholderTextColor:'gray'      
+    },
+    gym:{
+      placeholder: 'Your gym location eg. YMCA Sheppard & Bayview, Toronto',
+      placeholderTextColor:'gray'      
+    },
+    style: {
+      placeholder: 'Your Training Style',
+      placeholderTextColor:'gray',
+      nullOption: {value: '', text: 'Pick your type of training'}
+    },
+    certifications: {
+      placeholder: 'Your certifications eg. BCWA certification',
+      placeholderTextColor:'gray'
+    },
+    achievements: {
+      placeholder: 'Your achievements eg. 485lb deadlift, 325lb bench',
+      placeholderTextColor:'gray'
+    },
+    interested_in: {
+      nullOption: {value: '', text: 'Are you looking for a comrade or a trainer'}
+    }
+  }
 };
 
 class AthleteSignupForm extends Component {
@@ -173,6 +173,9 @@ class AthleteSignupForm extends Component {
     var value = this.refs["form"].getValue();
     if (value) { // if validation fails, value will be null
       console.log(value); // value here is an instance of Person
+      console.log(Router.getHomeRoute());
+      let route = Router.getHomeRoute();
+      this.props.navigator.push(route);
     }
   }
 
@@ -186,7 +189,7 @@ class AthleteSignupForm extends Component {
       <View style={styles.profile}>
       <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
       <View style={[styles.avatar, styles.avatarContainer, {marginBottom: 20}]}>
-      { this.state.avatarSource === null ? <View><Icon name='user' type='evilicon' color='white' size={100} /><Text>Click to add Photo</Text></View>
+      { this.state.avatarSource === null ? <Icon name='plus' type='octicon' color='#48BBEC' size={40} />
       :
       <Image style={styles.avatar} source={this.state.avatarSource} />
     }
@@ -244,8 +247,8 @@ var styles = StyleSheet.create({
   justifyContent: 'center'
 },
 avatarContainer: {
-  borderColor: 'transparent',
-  borderWidth: 1 / PixelRatio.get(),
+  borderColor: '#48BBEC',
+  borderWidth: 2 / PixelRatio.get(),
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
@@ -253,7 +256,9 @@ avatarContainer: {
   justifyContent: 'center'
 },
 avatar: {
-  borderRadius: 75,
+  borderRadius: 50,
+  borderColor: 'white',
+  borderWidth: 1,
   width: 100,
   flex: 1,
   height: 100,
