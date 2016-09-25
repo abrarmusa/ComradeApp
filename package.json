@@ -6,7 +6,9 @@
     "start": "node_modules/react-native/packager/packager.sh"
   },
   "dependencies": {
+    "@exponent/ex-navigation": "^1.5.29",
     "@exponent/react-native-navigator": "^0.4.8",
+    "babel-preset-react-native-stage-0": "^1.0.1",
     "react": "15.3.2",
     "react-native": "^0.34.0",
     "react-native-animatable": "^0.6.1",
@@ -21,5 +23,8 @@
     "react-native-vector-icons": "^2.1.0",
     "rn-splash-screen": "^2.1.0",
     "tcomb-form-native": "^0.6.1"
+  },
+  "devDependencies": {
+    "babel-preset-react-native": "^1.9.0"
   }
 }

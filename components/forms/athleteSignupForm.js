@@ -176,6 +176,15 @@ class AthleteSignupForm extends Component {
       console.log(Router.getHomeRoute());
       let route = Router.getHomeRoute();
       this.props.navigator.push(route);
+
+    } else {
+      let route = Router.getHomeRoute();
+      console.log(this.props.navigator.props);
+      this.props.navigator.push(route);
+//       REPLACE THE FORM PAGE WITH
+//       this.props.navigator.replaceAtIndex(replacerRoute, 1, function(){
+//       
+//     })
     }
   }
 

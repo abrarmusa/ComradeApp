@@ -35,6 +35,7 @@
 		9DBADC905B3243E681A39C70 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3461D07F52442E0984C186E /* Zocial.ttf */; };
 		A2B0A9455ED84D64AF15D69C /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11444AAB5903453BB24FAB80 /* Octicons.ttf */; };
 		A676FA30223D4473A8AC6582 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB40117DD234B02B785977F /* libRNVectorIcons.a */; };
+		F844C5B01D970ED9007AD30B /* Porter Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F844C5A01D970ECD007AD30B /* Porter Bold.ttf */; };
 		F8AD448C1D9645A8007A7652 /* libART.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8AD446F1D96458E007A7652 /* libART.a */; };
 /* End PBXBuildFile section */
 
@@ -190,6 +191,7 @@
 		D3461D07F52442E0984C186E /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		E1B1F1C55A494FDF9545E4E6 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
 		F204017D36044248A25BE7D1 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		F844C5A01D970ECD007AD30B /* Porter Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Porter Bold.ttf"; path = "../../../Downloads/Porter Bold.ttf"; sourceTree = "<group>"; };
 		F8AD446A1D96458E007A7652 /* ART.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ART.xcodeproj; path = "../node_modules/react-native/Libraries/ART/ART.xcodeproj"; sourceTree = "<group>"; };
 		F9699299870142768994B3C5 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -364,6 +366,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				F844C5A01D970ECD007AD30B /* Porter Bold.ttf */,
 				13B07FAE1A68108700A75B9A /* ComradeApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ComradeAppTests */,
@@ -702,6 +705,7 @@
 				088276EE358D4BD1B450EE13 /* Entypo.ttf in Resources */,
 				7041F06200584049868E4767 /* EvilIcons.ttf in Resources */,
 				92EBC7B66A4540628CC39716 /* FontAwesome.ttf in Resources */,
+				F844C5B01D970ED9007AD30B /* Porter Bold.ttf in Resources */,
 				066CD9167C82460E8908F5EC /* Foundation.ttf in Resources */,
 				352F4DFA25974E488F700E5D /* Ionicons.ttf in Resources */,
 				15FFC1CE522E49F19AC3ED83 /* MaterialIcons.ttf in Resources */,
