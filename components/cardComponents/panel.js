@@ -7,26 +7,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 var {height, width} = Dimensions.get('window');
 
-const getDirectionAndColor = ({ moveX, moveY, dx, dy}) => {
-  const draggedDown = dy > 30;
-  const draggedUp = dy < -30;
-  const draggedLeft = dx < -30;
-  const draggedRight = dx > 30;
-  const isRed = moveY < 90 && moveY > 40 && moveX > 0 && moveX < width;
-  const isBlue = moveY > (height - 50) && moveX > 0 && moveX < width;
-  let dragDirection = '';
-  if (draggedDown || draggedUp) {
-    if (draggedDown) dragDirection += 'dragged down '
-    if (draggedUp) dragDirection +=  'dragged up ';
-  }
-  if (draggedLeft || draggedRight) {
-    if (draggedLeft) dragDirection += 'dragged left '
-    if (draggedRight) dragDirection +=  'dragged right ';
-  }
-  if (isRed) return `red ${dragDirection}`
-  if (isBlue) return `blue ${dragDirection}`
-  if (dragDirection) return dragDirection;
-};
+
 
 class Panel extends Component {
 
@@ -44,9 +25,15 @@ class Panel extends Component {
                   source={{uri: this.props.image}}  
             />
           
-            <View style={styles.triangle}/>
+
             <LinearGradient start={[0.0, 0.0]} end={[1, 1]} locations={[0,0.2,0.3,0.4,0.5]} colors={['rgba(70, 186, 236, 1)', 'rgba(70, 186, 236, 0.8)','rgba(70, 186, 236, 0.7)', 'rgba(70, 186, 236, 0.4)','rgba(0, 0, 0, 0.0)']} style={styles.triangle} />
-            <Text style={styles.title}>{this.props.name}</Text>
+        
+            <Text style={styles.title}>{this.props.name.split(" ")[0]}</Text>
+            <LinearGradient start={[0.0, 0.0]} locations={[0.0,0.1,0.3]} end={[0.0, 1.0]} colors={['rgba(70, 186, 236, 0)', 'rgba(70, 186, 236, 0.5)', 'rgba(70, 186, 236, 1)']}  style={styles.rect} >
+        
+              <Text style={styles.text}>{this.props.weight} {this.props.style}</Text>
+              <Text style={styles.text}>{this.props.achievements}</Text>
+            </LinearGradient>
         </View> 
       
         
@@ -123,6 +110,15 @@ const styles = StyleSheet.create({
     borderBottomWidth: 150,
     borderRightColor: 'transparent',
     borderBottomColor: 'rgba(0,0,0,0)'
+  },
+  rect: {
+    flex: 1,
+    width: width/1.2,
+    position: 'absolute',
+    padding: 5,
+    bottom: 0,
+    borderRadius: 6,
+    
   }
 })
 
