@@ -5,6 +5,7 @@ var Progress = require('react-native-progress');
 import SwipeCards from 'react-native-swipe-cards';
 import LinearGradient from 'react-native-linear-gradient';
 
+
 var {height, width} = Dimensions.get('window');
 
 
@@ -12,6 +13,14 @@ var {height, width} = Dimensions.get('window');
 class Panel extends Component {
 
   render() {
+    let imgPath;
+    if (this.props.style == 'weightlifter'){
+      imgPath = <Image style={styles.lifticon} source={require('../../images/weightlifter.png')} />;
+    } else if (this.props.style == 'bodybuilder') {
+      imgPath = <Image style={styles.lifticon} source={require('../../images/bodybuilder.png')} />;
+    } else if (this.props.style == 'powerlifter') {
+      imgPath = <Image style={styles.lifticon} source={require('../../images/powerlifter.png')} />;
+    };
     return (
       
         <View style={[styles.cardface, this.props.panelStyle, {left: ((width-(width/1.2))/2), top: ((height-(height/1.4))/2)-40 }]}>
@@ -24,16 +33,17 @@ class Panel extends Component {
                   }} 
                   source={{uri: this.props.image}}  
             />
-          
-
-            <LinearGradient start={[0.0, 0.0]} end={[1, 1]} locations={[0,0.2,0.3,0.4,0.5]} colors={['rgba(70, 186, 236, 1)', 'rgba(70, 186, 236, 0.8)','rgba(70, 186, 236, 0.7)', 'rgba(70, 186, 236, 0.4)','rgba(0, 0, 0, 0.0)']} style={styles.triangle} />
-        
-            <Text style={styles.title}>{this.props.name.split(" ")[0]}</Text>
-            <LinearGradient start={[0.0, 0.0]} locations={[0.0,0.1,0.3]} end={[0.0, 1.0]} colors={['rgba(70, 186, 236, 0)', 'rgba(70, 186, 236, 0.5)', 'rgba(70, 186, 236, 1)']}  style={styles.rect} >
-        
-              <Text style={styles.text}>{this.props.weight} {this.props.style}</Text>
-              <Text style={styles.text}>{this.props.achievements}</Text>
+            
+            <LinearGradient start={[0.0, 0.0]} locations={[0.0,0.5,0.8]} end={[0.0, 1.0]} colors={['rgba(22,27,33, 0.7)', 'rgba(22,27,33, 0.5)', 'rgba(22,27,33, 0)']}  style={[styles.rect,{ top: 0, height: 140}, styles.toprect]} >
+              {imgPath}
             </LinearGradient>
+            <LinearGradient start={[0.0, 0.0]} end={[1, 1]} locations={[0,0.2,0.3,0.4,0.5]} colors={['rgba(70, 186, 236, 1)', 'rgba(70, 186, 236, 0.8)','rgba(70, 186, 236, 0.7)', 'rgba(70, 186, 236, 0.4)','rgba(0, 0, 0, 0.0)']} style={[styles.triangle]} />
+            
+            
+            <Text style={styles.title}>{this.props.name.split(" ")[0]}</Text>
+            <Text style={styles.titletext}>{this.props.weight} {this.props.style}</Text>
+
+            
         </View> 
       
         
@@ -54,11 +64,7 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     borderWidth: 1,
     borderRadius: 5,
-    borderColor: 'transparent',    
-  },
-  maincard: {
-    backgroundColor: 'rgba(255,255,255, 1)',
-    padding: 1
+    borderColor: 'rgba(70, 186, 236, 1)',    
   },
   title: {
     fontSize: 20,
@@ -71,19 +77,34 @@ const styles = StyleSheet.create({
     left: 5,
     position: 'absolute',
     fontSize: 32,
-    fontFamily: "Porter-BoldDEMO",
-    fontWeight: '500'
-  },  
-  text: {
+    fontFamily: "AvenirNext-UltraLight",
+    fontWeight: '300'
+  },
+  titletext: {
     fontSize: 20,
-    paddingTop: 10,
-    paddingBottom: 10,
+    paddingLeft: 9,
     color: 'white',
     backgroundColor: 'transparent',
     margin: 10,
-    fontSize: 20,
+    top: 45,
+    left: 5,
+    position: 'absolute',
+    fontSize: 22,
     fontFamily: "AvenirNext-UltraLight",
     fontWeight: '300'
+  },  
+  text: {
+    fontSize: 20,
+    paddingTop: 5,
+    marginBottom: 5,
+    color: 'white',
+    backgroundColor: 'transparent',
+    alignSelf: 'stretch',
+    marginLeft: 10,
+    width: width/1.2 - 20,
+    fontSize: 20,
+    fontFamily: "AvenirNext-UltraLight",
+    fontWeight: '100'
   },
   cardface: {
     borderRadius: 5,
@@ -116,10 +137,28 @@ const styles = StyleSheet.create({
     width: width/1.2,
     position: 'absolute',
     padding: 5,
-    bottom: 0,
-    borderRadius: 6,
+    margin: 1,
+    width: width/1.2 -2,
+    borderRadius: 5,
+    backgroundColor: 'transparent',
     
-  }
+  },
+  toprect: {
+    margin: 1,
+    width: width/1.2 -2,
+  },
+
+  bottomrect: {
+   width: width/1.2 -2,
+   bottom: 1
+  },
+  lifticon: {
+    height: 60,
+    position: 'absolute',
+    left: 65,
+    top: 25,
+    resizeMode: 'contain'
+  },
 })
 
 export default Panel
