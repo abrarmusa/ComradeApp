@@ -33,7 +33,7 @@
                                                initialProperties:nil
                                                    launchOptions:launchOptions];
   [RCTSplashScreen show:rootView];
-  rootView.backgroundColor = [UIColor colorWithRed:0.09 green:0.11 blue:0.13 alpha:1.0];
+  rootView.backgroundColor = [UIColor colorWithRed:0.25 green:0.25 blue:0.25 alpha:1.0];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];

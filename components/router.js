@@ -6,6 +6,7 @@ import CardsPage from './cardsPage.js'
 import AthleteProfile from './cardComponents/athleteProfile'
 import { Button,Icon } from 'react-native-elements'
 import ExNavigator from '@exponent/react-native-navigator';
+import ExSceneConfigs from '@exponent/react-native-navigator';
 // Switch to ExNavigation
 // import {
 //   createRouter
@@ -40,15 +41,14 @@ let Router = {
         return <FormScreen navigator={navigator} />;
       },
       renderTitle() {
-        return <Text style={{marginTop: 11, color: '#48BBEC'}}>Create an account</Text>
+        return <Text style={{marginTop: 11, color: '#404041', fontSize: 16}}>Create an account</Text>
       }  
     };
   },
   
 //   HOME PAGE ROUTE
-  getHomeRoute(){
+  getHomeRoute(navigator){
     console.log('Getting Home route');
-    
     return {
       renderScene(navigator) {
         return <CardsPage navigator={navigator} />;
@@ -57,7 +57,7 @@ let Router = {
       renderTitle() {
         return (
           <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-            <Text style={{color:'white', fontFamily: 'Porter-BoldDEMO', fontSize: 18}}>Comrade</Text>
+            <Text style={{color:'#404041', fontFamily: 'Porter-BoldDEMO', fontSize: 18}}>Comrade</Text>
           </View>
         );
       },
@@ -74,7 +74,7 @@ let Router = {
                 type='octicon'
                  underlayColor='red'
                onPress={() => console.log('hello')}
-                iconStyle={{color:'#48BBEC', margin: 9}}
+                iconStyle={{color:'#c1912e', margin: 9}}
               />
           </View>          
              
@@ -87,13 +87,13 @@ let Router = {
                 name='comment-o'
                 type='font-awesome'
                 onPress={() => console.log('hello')}
-                iconStyle={{color:'#48BBEC', margin: 9}}
+                iconStyle={{color:'#c1912e', margin: 9}}
               />
           </View>       
         );
       },
       configureScene(){
-          return Navigator.SceneConfigs.VerticalUpSwipeJump;
+          return Navigator.SceneConfigs.FloatFromRight;
       },      
     }
 
@@ -108,6 +108,13 @@ let Router = {
         renderLeftButton(){
           return null;
         },
+      renderTitle() {
+        return (
+          <View style={{ flexDirection: 'row' }}>
+            <Text style={styles.titleName}>{athlete.name}</Text>
+          </View>
+        );
+      },     
         renderRightButton(navigator) {
           return (
             <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
@@ -115,13 +122,13 @@ let Router = {
                   name='close'
                   type='font-awesome'
                   onPress={() => {navigator.pop();}}
-                  iconStyle={{color:'#48BBEC', margin: 9}}
+                  iconStyle={{color:'#c1912e', margin: 9}}
                 />
             </View>       
           );
         },
         configureScene(){
-            return Navigator.SceneConfigs.VerticalUpSwipeJump;
+            return Navigator.SceneConfigs.FloatFromBottom;
         },      
     }
   }
@@ -132,6 +139,14 @@ let Router = {
 const styles = StyleSheet.create({
   navbarstyle: {
     backgroundColor: 'red'
+  },
+  titleName: {
+    color: 'white',
+    fontSize: 24,
+    top: 11,
+    fontFamily: "AvenirNext-UltraLight",
+    color: '#A2D3E8',
+    fontWeight: '400'    
   }
 })
 export default Router;

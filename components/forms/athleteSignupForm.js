@@ -34,31 +34,31 @@ var Athlete = t.struct({
   interested_in: interests
 });
 
-Form.stylesheet.textbox.normal.color = 'white';
-Form.stylesheet.textbox.normal.fontSize = 12;
+Form.stylesheet.textbox.normal.color = 'black';
+Form.stylesheet.textbox.normal.fontSize = 15;
 Form.stylesheet.textbox.normal.borderWidth = 0;
-Form.stylesheet.textbox.error.color = 'white';
-Form.stylesheet.textbox.error.fontSize = 12;
+Form.stylesheet.textbox.error.color = 'black';
+Form.stylesheet.textbox.error.fontSize = 15;
 Form.stylesheet.textbox.error.borderWidth = 1;
-Form.stylesheet.controlLabel.normal.color = 'white';
+Form.stylesheet.controlLabel.normal.color = 'black';
 Form.stylesheet.controlLabel.normal.top = 10;
 Form.stylesheet.controlLabel.error.marginTop = 10;
 Form.stylesheet.controlLabel.normal.borderBottomWidth = 1;
-Form.stylesheet.controlLabel.normal.borderBottomColor = 'white';
+Form.stylesheet.controlLabel.normal.borderBottomColor = '#404041';
 Form.stylesheet.formGroup.normal.borderBottomWidth = 1;
-Form.stylesheet.formGroup.normal.borderBottomColor = 'white';
+Form.stylesheet.formGroup.normal.borderBottomColor = '#404041';
 Form.stylesheet.formGroup.error.borderBottomWidth = 1;
-Form.stylesheet.formGroup.error.borderBottomColor = 'white';
-Form.stylesheet.controlLabel.normal.fontSize = 12;
-Form.stylesheet.controlLabel.error.fontSize = 12;
-Form.stylesheet.pickerValue.normal.color = 'white';
-Form.stylesheet.pickerValue.normal.fontSize = 12;
-Form.stylesheet.pickerValue.error.color = 'white';
-Form.stylesheet.pickerValue.error.fontSize = 12;
-Form.stylesheet.itemStyle.color = 'white';
-Form.stylesheet.itemStyle.fontSize = 12;
+Form.stylesheet.formGroup.error.borderBottomColor = '#404041';
+Form.stylesheet.controlLabel.normal.fontSize = 15;
+Form.stylesheet.controlLabel.error.fontSize = 15;
+Form.stylesheet.pickerValue.normal.color = '#c1912e';
+Form.stylesheet.pickerValue.normal.fontSize = 15;
+Form.stylesheet.pickerValue.error.color = '#c1912e';
+Form.stylesheet.pickerValue.error.fontSize = 15;
+Form.stylesheet.itemStyle.color = '#404041';
+Form.stylesheet.itemStyle.fontSize = 15;
 // Form.stylesheet.pickerTouchable.normal.color = 'white';
-Form.itemStyle = {color:'white'};
+Form.itemStyle = {color:'#c1912e'};
 
 
 var athlete_options = {
@@ -198,7 +198,7 @@ class AthleteSignupForm extends Component {
       <View style={styles.profile}>
       <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
       <View style={[styles.avatar, styles.avatarContainer, {marginBottom: 20}]}>
-      { this.state.avatarSource === null ? <Icon name='plus' type='octicon' color='#48BBEC' size={40} />
+      { this.state.avatarSource === null ? <Icon name='plus' type='octicon' color='#c1912e' size={40} />
       :
       <Image style={styles.avatar} source={this.state.avatarSource} />
     }
@@ -211,7 +211,7 @@ class AthleteSignupForm extends Component {
     type={Athlete}
     options={athlete_options}
     />
-    <TouchableHighlight style={styles.button} onPress={this.onPress.bind(this)} underlayColor='#99d9f4'>
+    <TouchableHighlight style={styles.button} onPress={this.onPress.bind(this)} underlayColor='#404041'>
     <Text style={styles.buttonText}>Save</Text>
     </TouchableHighlight>
     </View>    
@@ -226,7 +226,7 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 50,
     padding: 20,
-    backgroundColor: '#161b21',
+    backgroundColor: 'white',
   },
   title: {
     fontSize: 30,
@@ -247,8 +247,8 @@ var styles = StyleSheet.create({
  },
  button: {
   height: 36,
-  backgroundColor: '#48BBEC',
-  borderColor: '#48BBEC',
+  backgroundColor: '#c1912e',
+  borderColor: '#c1912e',
   borderWidth: 1,
   borderRadius: 8,
   marginBottom: 10,
@@ -256,7 +256,7 @@ var styles = StyleSheet.create({
   justifyContent: 'center'
 },
 avatarContainer: {
-  borderColor: '#48BBEC',
+  borderColor: '#c1912e',
   borderWidth: 2 / PixelRatio.get(),
   justifyContent: 'center',
   alignItems: 'center',

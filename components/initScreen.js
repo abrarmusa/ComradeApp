@@ -20,20 +20,22 @@ class InitScreen extends Component {
 
   render() {
     return (
-//         <ExNavigator initialRoute={Router.getInitialRoute()} 
+      
+        <ExNavigator initialRoute={Router.getInitialRoute()} 
+          style={{ flex: 1, backgroundColor: 'white'}} 
+          navigationBarStyle={{backgroundColor: 'white', borderBottomWidth:0, zIndex: 1}} 
+          barButtonIconStyle={{tintColor: '#404041'}} 
+          sceneStyle={{ backgroundColor: 'white', paddingTop: 0 }}
+      >
+      <StatusBar barStyle="default" />
+      </ExNavigator>
+//         <ExNavigator 
+//           initialRoute={Router.getHomeRoute(navigator)} 
 //           style={{ flex: 1, backgroundColor: '#161b21'}} 
 //           navigationBarStyle={{backgroundColor: 'rgba(22, 27, 33,0.5)', borderBottomWidth:0, zIndex: 1}} 
-//           barButtonIconStyle={{tintColor: '#48BBEC'}} 
-//           sceneStyle={{ backgroundColor: '#161b21', paddingTop: 40 }}
+//           barButtonIconStyle={{tintColor: '#48BBEC'}}
+//           sceneStyle={{ backgroundColor: '#161b21', paddingTop: 0 }}
 //       />
-      
-        <ExNavigator 
-          initialRoute={Router.getHomeRoute()} 
-          style={{ flex: 1, backgroundColor: '#161b21'}} 
-          navigationBarStyle={{backgroundColor: 'rgba(22, 27, 33,0.5)', borderBottomWidth:0, zIndex: 1}} 
-          barButtonIconStyle={{tintColor: '#48BBEC'}}
-          sceneStyle={{ backgroundColor: '#161b21', paddingTop: 40 }}
-      />
       
 
     )

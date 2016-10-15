@@ -5,7 +5,6 @@ var Progress = require('react-native-progress');
 import SwipeCards from 'react-native-swipe-cards';
 import LinearGradient from 'react-native-linear-gradient';
 
-
 var {height, width} = Dimensions.get('window');
 
 
@@ -37,7 +36,7 @@ class Panel extends Component {
             <LinearGradient start={[0.0, 0.0]} locations={[0.0,0.5,0.8]} end={[0.0, 1.0]} colors={['rgba(22,27,33, 0.7)', 'rgba(22,27,33, 0.5)', 'rgba(22,27,33, 0)']}  style={[styles.rect,{ top: 0, height: 140}, styles.toprect]} >
               {imgPath}
             </LinearGradient>
-            <LinearGradient start={[0.0, 0.0]} end={[1, 1]} locations={[0,0.2,0.3,0.4,0.5]} colors={['rgba(70, 186, 236, 1)', 'rgba(70, 186, 236, 0.8)','rgba(70, 186, 236, 0.7)', 'rgba(70, 186, 236, 0.4)','rgba(0, 0, 0, 0.0)']} style={[styles.triangle]} />
+            <LinearGradient start={[0.0, 0.0]} end={[1, 1]} locations={[0,0.2,0.3,0.4,0.5]} colors={['#c1912e', 'rgba(70, 186, 236, 0.8)','rgba(70, 186, 236, 0.7)', 'rgba(70, 186, 236, 0.4)','rgba(0, 0, 0, 0.0)']} style={[styles.triangle]} />
             
             
             <Text style={styles.title}>{this.props.name.split(" ")[0]}</Text>
@@ -55,7 +54,7 @@ const styles = StyleSheet.create({
   face: {
     backgroundColor: '#161b21',
     borderRadius: 5,
-    borderColor: 'rgba(70, 186, 236, 1)',
+    borderColor: '#c1912e',
   },
   thumbnail: {
     flex: 1,
@@ -64,7 +63,7 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     borderWidth: 1,
     borderRadius: 5,
-    borderColor: 'rgba(70, 186, 236, 1)',    
+    borderColor: '#c1912e',    
   },
   title: {
     fontSize: 20,
@@ -108,9 +107,9 @@ const styles = StyleSheet.create({
   },
   cardface: {
     borderRadius: 5,
-    borderColor: 'rgba(70, 186, 236, 1)',
+    borderColor: '#c1912e',
     backgroundColor: '#161b21',
-    shadowColor: "rgba(70, 186, 236, 1)",
+    shadowColor: "#c1912e",
     shadowOpacity: 0.8,
     shadowRadius: 5,
     shadowOffset: {

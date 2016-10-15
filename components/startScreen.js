@@ -10,11 +10,11 @@ class StartScreen extends Component {
         <View animation="fadeIn" delay={1000} style={styles.innerbox}>
           <Image
             style={styles.mainlogo}
-            source={require('../images/comrade_logo.png')}
+            source={require('../images/comrade_logo_alt.png')}
           />
           <Image
             style={styles.textlogo}
-            source={require('../images/comrade_text_logo.png')}
+            source={require('../images/comrade_text_logo_alt.png')}
           />
 
         <SocialIcon
@@ -35,7 +35,7 @@ class StartScreen extends Component {
 const styles = StyleSheet.create({
   mainbox: {
     flex: 1,
-    backgroundColor: '#161b21',
+    backgroundColor: 'white',
     flexDirection:'row',
     alignItems:'center',
     justifyContent:'center'
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     alignItems:'center',
     justifyContent:'center',
-      backgroundColor: '#161b21'
+      backgroundColor: 'white'
   }, 
   mainlogo: {
     margin: 10,
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   },
   textlogo: {
     margin: 10,    
-    width: 350,
+    width: 330,
     resizeMode: 'contain'
   }  
 });
