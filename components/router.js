@@ -35,13 +35,15 @@ let Router = {
 // FORM PAGE ROUTE
   getFormRoute() {
     console.log('Getting form route');
+    
     return {
       showNavigationBar: true,
       renderScene(navigator) {
+        console.log(navigator.navigationBarStyle);
         return <FormScreen navigator={navigator} />;
       },
       renderTitle() {
-        return <Text style={{marginTop: 11, color: '#404041', fontSize: 16}}>Create an account</Text>
+        return <Text style={{marginTop: 11, color: '#c1912e', fontSize: 16}}>Create an account</Text>
       }  
     };
   },
@@ -56,8 +58,8 @@ let Router = {
       
       renderTitle() {
         return (
-          <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-            <Text style={{color:'#404041', fontFamily: 'Porter-BoldDEMO', fontSize: 18}}>Comrade</Text>
+          <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center', zIndex: 0}}>
+            <Text style={{color:'#c1912e', fontFamily: 'Porter-BoldDEMO', fontSize: 18}}>Comrade</Text>
           </View>
         );
       },
@@ -68,7 +70,7 @@ let Router = {
 
       renderLeftButton(){
         return (
-          <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
+          <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center', zIndex: 0}}>
              <Icon
                 name='person'
                 type='octicon'
@@ -108,13 +110,7 @@ let Router = {
         renderLeftButton(){
           return null;
         },
-      renderTitle() {
-        return (
-          <View style={{ flexDirection: 'row' }}>
-            <Text style={styles.titleName}>{athlete.name}</Text>
-          </View>
-        );
-      },     
+   
         renderRightButton(navigator) {
           return (
             <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
@@ -141,11 +137,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'red'
   },
   titleName: {
-    color: 'white',
+    color: '#c1912e',
     fontSize: 24,
     top: 11,
     fontFamily: "AvenirNext-UltraLight",
-    color: '#A2D3E8',
     fontWeight: '400'    
   }
 })

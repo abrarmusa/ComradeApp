@@ -4,6 +4,7 @@ import StartScreen from './startScreen.js'
 import FormScreen from './formScreen.js'
 import { Button } from 'react-native-elements'
 import Router from './router'
+// import CustomNavbar from './customNavbar'
 import ExNavigator from '@exponent/react-native-navigator';
 // import {
 //   NavigationProvider,
@@ -20,23 +21,27 @@ class InitScreen extends Component {
 
   render() {
     return (
-      
-        <ExNavigator initialRoute={Router.getInitialRoute()} 
-          style={{ flex: 1, backgroundColor: 'white'}} 
-          navigationBarStyle={{backgroundColor: 'white', borderBottomWidth:0, zIndex: 1}} 
-          barButtonIconStyle={{tintColor: '#404041'}} 
-          sceneStyle={{ backgroundColor: 'white', paddingTop: 0 }}
+//               <ExNavigator initialRoute={Router.getInitialRoute()} 
+//           style={{ flex: 1, backgroundColor: 'black'}} 
+//           navigationBarStyle={{backgroundColor: 'transparent', borderBottomWidth:0}} 
+//           barButtonIconStyle={{tintColor: '#404041',zIndex: 0}} 
+//           sceneStyle={{ backgroundColor: '#28292B', paddingTop: 0, zIndex:1}}
+//       >     
+              <ExNavigator 
+          initialRoute={Router.getHomeRoute(navigator)} 
+          style={{ flex: 1, backgroundColor: '#efebe6'}} 
+          navigationBarStyle={{backgroundColor: 'transparent', borderBottomWidth:0}} 
+          barButtonIconStyle={{tintColor: '#404041',zIndex: 0}} 
+          sceneStyle={{ backgroundColor: '#28292B', paddingTop: 0, zIndex:1}}
       >
+ 
+
+
+      
+      
+
       <StatusBar barStyle="default" />
       </ExNavigator>
-//         <ExNavigator 
-//           initialRoute={Router.getHomeRoute(navigator)} 
-//           style={{ flex: 1, backgroundColor: '#161b21'}} 
-//           navigationBarStyle={{backgroundColor: 'rgba(22, 27, 33,0.5)', borderBottomWidth:0, zIndex: 1}} 
-//           barButtonIconStyle={{tintColor: '#48BBEC'}}
-//           sceneStyle={{ backgroundColor: '#161b21', paddingTop: 0 }}
-//       />
-      
 
     )
   }

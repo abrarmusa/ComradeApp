@@ -4,7 +4,6 @@ import Image from 'react-native-image-progress';
 var Progress = require('react-native-progress');
 import SwipeCards from 'react-native-swipe-cards';
 import LinearGradient from 'react-native-linear-gradient';
-
 var {height, width} = Dimensions.get('window');
 
 
@@ -21,22 +20,25 @@ class Panel extends Component {
       imgPath = <Image style={styles.lifticon} source={require('../../images/powerlifter.png')} />;
     };
     return (
-      
-        <View style={[styles.cardface, this.props.panelStyle, {left: ((width-(width/1.2))/2), top: ((height-(height/1.4))/2)-40 }]}>
-        
+
+                    
+        <View style={[styles.cardface, this.props.panelStyle, {left: ((width-(width/1.1))/2), top: ((height-(height/1.4))/2)-50}]}>
+
         <Image style={[styles.thumbnail,this.props.imageStyle]} 
                   indicator={Progress.CircleSnail}
                   indicatorProps={{
                     size: 80,
-                    color: '#48BBEC'
+                    color: '#c1912e'
                   }} 
-                  source={{uri: this.props.image}}  
-            />
+                  source={{uri: this.props.images[1]}}  
+            >
+
+        </Image>
             
-            <LinearGradient start={[0.0, 0.0]} locations={[0.0,0.5,0.8]} end={[0.0, 1.0]} colors={['rgba(22,27,33, 0.7)', 'rgba(22,27,33, 0.5)', 'rgba(22,27,33, 0)']}  style={[styles.rect,{ top: 0, height: 140}, styles.toprect]} >
+            <LinearGradient start={[0.0, 1.0]} locations={[0.0,0.5,0.8, 0.9]} end={[0.0, 0.0]} colors={['rgba(5, 5, 5, 1.0)', 'rgba(5, 5, 5, 0.8)', 'rgba(5, 5, 5, 0.4)', 'rgba(5, 5, 5, 0.0)' ]}  style={[styles.rect,{height: 120}, styles.toprect]} >
               {imgPath}
             </LinearGradient>
-            <LinearGradient start={[0.0, 0.0]} end={[1, 1]} locations={[0,0.2,0.3,0.4,0.5]} colors={['#c1912e', 'rgba(70, 186, 236, 0.8)','rgba(70, 186, 236, 0.7)', 'rgba(70, 186, 236, 0.4)','rgba(0, 0, 0, 0.0)']} style={[styles.triangle]} />
+            
             
             
             <Text style={styles.title}>{this.props.name.split(" ")[0]}</Text>
@@ -51,14 +53,10 @@ class Panel extends Component {
 }
 
 const styles = StyleSheet.create({
-  face: {
-    backgroundColor: '#161b21',
-    borderRadius: 5,
-    borderColor: '#c1912e',
-  },
+
   thumbnail: {
     flex: 1,
-    width: width/1.2,
+    width: width/1.1,
     height: height/1.4,
     resizeMode: 'cover',
     borderWidth: 1,
@@ -72,7 +70,7 @@ const styles = StyleSheet.create({
     color: 'white',
     backgroundColor: 'transparent',
     margin: 10,
-    top: 5,
+    bottom: 50,
     left: 5,
     position: 'absolute',
     fontSize: 32,
@@ -85,7 +83,7 @@ const styles = StyleSheet.create({
     color: 'white',
     backgroundColor: 'transparent',
     margin: 10,
-    top: 45,
+    bottom: 30,
     left: 5,
     position: 'absolute',
     fontSize: 22,
@@ -100,7 +98,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     alignSelf: 'stretch',
     marginLeft: 10,
-    width: width/1.2 - 20,
+    width: width/1.1 - 20,
     fontSize: 20,
     fontFamily: "AvenirNext-UltraLight",
     fontWeight: '100'
@@ -108,7 +106,7 @@ const styles = StyleSheet.create({
   cardface: {
     borderRadius: 5,
     borderColor: '#c1912e',
-    backgroundColor: '#161b21',
+    backgroundColor: 'black',
     shadowColor: "#c1912e",
     shadowOpacity: 0.8,
     shadowRadius: 5,
@@ -117,45 +115,34 @@ const styles = StyleSheet.create({
       width: 0
     },
   },
-  triangle: {
-    position: 'absolute',
-    width: 0,
-    top: 0,
-    height: 0,
-    backgroundColor: 'transparent',
-    borderStyle: 'solid',
-    marginTop: 10,
-    marginLeft: 10,
-    borderRightWidth: 150,
-    borderBottomWidth: 150,
-    borderRightColor: 'transparent',
-    borderBottomColor: 'rgba(0,0,0,0)'
-  },
   rect: {
     flex: 1,
-    width: width/1.2,
+    width: width/1.1,
     position: 'absolute',
+    bottom: 0,
     padding: 5,
     margin: 1,
-    width: width/1.2 -2,
+    width: width/1.1,
     borderRadius: 5,
+    borderBottomWidth: 1,
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    borderBottomLeftRadius: 5,
+    borderBottomRightRadius: 5,
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,    
+    borderColor: '#c1912e',
     backgroundColor: 'transparent',
-    
   },
   toprect: {
-    margin: 1,
-    width: width/1.2 -2,
+    margin: 0,
   },
 
-  bottomrect: {
-   width: width/1.2 -2,
-   bottom: 1
-  },
   lifticon: {
     height: 60,
     position: 'absolute',
     left: 65,
-    top: 25,
+    bottom: 25,
     resizeMode: 'contain'
   },
 })

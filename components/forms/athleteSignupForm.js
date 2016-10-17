@@ -34,21 +34,21 @@ var Athlete = t.struct({
   interested_in: interests
 });
 
-Form.stylesheet.textbox.normal.color = 'black';
+Form.stylesheet.textbox.normal.color = 'white';
 Form.stylesheet.textbox.normal.fontSize = 15;
 Form.stylesheet.textbox.normal.borderWidth = 0;
-Form.stylesheet.textbox.error.color = 'black';
+Form.stylesheet.textbox.error.color = 'white';
 Form.stylesheet.textbox.error.fontSize = 15;
 Form.stylesheet.textbox.error.borderWidth = 1;
 Form.stylesheet.controlLabel.normal.color = 'black';
 Form.stylesheet.controlLabel.normal.top = 10;
 Form.stylesheet.controlLabel.error.marginTop = 10;
 Form.stylesheet.controlLabel.normal.borderBottomWidth = 1;
-Form.stylesheet.controlLabel.normal.borderBottomColor = '#404041';
+Form.stylesheet.controlLabel.normal.borderBottomColor = '#c1912e';
 Form.stylesheet.formGroup.normal.borderBottomWidth = 1;
-Form.stylesheet.formGroup.normal.borderBottomColor = '#404041';
+Form.stylesheet.formGroup.normal.borderBottomColor = '#c1912e';
 Form.stylesheet.formGroup.error.borderBottomWidth = 1;
-Form.stylesheet.formGroup.error.borderBottomColor = '#404041';
+Form.stylesheet.formGroup.error.borderBottomColor = '#c1912e';
 Form.stylesheet.controlLabel.normal.fontSize = 15;
 Form.stylesheet.controlLabel.error.fontSize = 15;
 Form.stylesheet.pickerValue.normal.color = '#c1912e';
@@ -179,7 +179,8 @@ class AthleteSignupForm extends Component {
 
     } else {
       let route = Router.getHomeRoute();
-      console.log(this.props.navigator.props);
+//       this.props.navigator.props.navigationBarStyle = {backgroundColor: 'red', borderBottomWidth:0};
+//       console.log(this.props.navigator.props.navigationBarStyle);
       this.props.navigator.push(route);
 //       REPLACE THE FORM PAGE WITH
 //       this.props.navigator.replaceAtIndex(replacerRoute, 1, function(){
@@ -226,7 +227,7 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 50,
     padding: 20,
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
   },
   title: {
     fontSize: 30,
@@ -246,11 +247,11 @@ var styles = StyleSheet.create({
    justifyContent: 'center'
  },
  button: {
-  height: 36,
+  height: 50,
   backgroundColor: '#c1912e',
   borderColor: '#c1912e',
   borderWidth: 1,
-  borderRadius: 8,
+  borderRadius: 0,
   marginBottom: 10,
   alignSelf: 'stretch',
   justifyContent: 'center'

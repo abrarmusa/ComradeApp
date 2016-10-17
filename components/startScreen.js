@@ -35,7 +35,7 @@ class StartScreen extends Component {
 const styles = StyleSheet.create({
   mainbox: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
     flexDirection:'row',
     alignItems:'center',
     justifyContent:'center'
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     alignItems:'center',
     justifyContent:'center',
-      backgroundColor: 'white'
+      backgroundColor: 'transparent'
   }, 
   mainlogo: {
     margin: 10,

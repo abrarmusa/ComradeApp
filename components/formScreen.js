@@ -29,12 +29,14 @@ class FormScreen extends Component {
   render() {
     return (
       <View style={styles.mainbox}>
+        <StatusBar barStyle="default" />
         
         {this.state.athlete === true ? <AthleteSignupForm navigator={this.props.navigator}/> : null}
-        <Tabs style={styles.tabbar} selected={this.state.page} style={{backgroundColor:'white', marginTop: 5, borderBottomWidth: 1, borderBottomColor: '#c1912e'}}
-              selectedStyle={{color:'#c1912e'}} onSelect={el=>this.setState({athlete:el.props.checkval, page: el.props.name})}>
-            <Text name="athlete" style={{color:'gray', fontSize: 16}} checkval={true} selectedIconStyle={{borderBottomWidth:2,borderBottomColor:'#c1912e'}} >Athlete</Text>
-            <Text name="trainer" style={{color:'gray', fontSize: 16}} checkval={false} selectedIconStyle={{borderBottomWidth:2,borderBottomColor:'#c1912e'}} >Trainer</Text>
+        
+        <Tabs style={styles.tabbar} selected={this.state.page} style={{backgroundColor:'#404041', marginTop: 0, borderBottomWidth:1, borderBottomColor:"#404041"}}
+              selectedStyle={{color:'white'}} onSelect={el=>this.setState({athlete:el.props.checkval, page: el.props.name})}>
+            <Text name="athlete" style={{color:'gray', fontSize: 16}} checkval={true} selectedIconStyle={{backgroundColor:"#c1912e"}} >Athlete</Text>
+            <Text name="trainer" style={{color:'gray', fontSize: 16}} checkval={false} selectedIconStyle={{backgroundColor:"#c1912e"}} >Trainer</Text>
         </Tabs>
         
       </View>
@@ -44,15 +46,14 @@ class FormScreen extends Component {
 const styles = StyleSheet.create({
   mainbox: {
     flex: 1,
-    paddingTop: 40,
-    backgroundColor: 'white',
+    paddingTop: 67,
+    backgroundColor: 'transparent',
     flexDirection:'row',
     alignItems:'center',
-    paddingTop: 40,
     justifyContent:'center'
   },
   tabbar: {
-    marginTop: 10,
+//     marginTop: 10,
     top: 0,
     fontSize: 15
 //     position: 'relative',
