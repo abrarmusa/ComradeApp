@@ -1,6 +1,9 @@
 package com.comradeapp;
 
 import com.facebook.react.ReactActivity;
+import com.magus.fblogin.FacebookLoginPackage;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
+import com.auth0.lock.react.LockReactPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.mehcode.reactnative.splashscreen.SplashScreenPackage;

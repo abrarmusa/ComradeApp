@@ -33,10 +33,10 @@ class FormScreen extends Component {
         
         {this.state.athlete === true ? <AthleteSignupForm navigator={this.props.navigator}/> : null}
         
-        <Tabs style={styles.tabbar} selected={this.state.page} style={{backgroundColor:'#404041', marginTop: 0, borderBottomWidth:1, borderBottomColor:"#404041"}}
+        <Tabs style={styles.tabbar} selected={this.state.page} style={{backgroundColor:'#7e7e81', marginTop: 0, borderBottomWidth:1, borderBottomColor:"#7e7e81"}}
               selectedStyle={{color:'white'}} onSelect={el=>this.setState({athlete:el.props.checkval, page: el.props.name})}>
-            <Text name="athlete" style={{color:'gray', fontSize: 16}} checkval={true} selectedIconStyle={{backgroundColor:"#c1912e"}} >Athlete</Text>
-            <Text name="trainer" style={{color:'gray', fontSize: 16}} checkval={false} selectedIconStyle={{backgroundColor:"#c1912e"}} >Trainer</Text>
+            <Text name="athlete" style={{color:'white', fontSize: 16}} checkval={true} selectedIconStyle={{backgroundColor:"#404041"}} >Athlete</Text>
+            <Text name="trainer" style={{color:'white', fontSize: 16}} checkval={false} selectedIconStyle={{backgroundColor:"#404041"}} >Trainer</Text>
         </Tabs>
         
       </View>

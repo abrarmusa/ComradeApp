@@ -119,10 +119,10 @@ class CardsPage extends Component {
       </View>
         <View style={styles.buttonsect}>
           <TouchableOpacity style={styles.buttonleft} onPress={this.noButton.bind(this)} activeOpacity={0.2}>
-            <Icon large  name='x' type='foundation' color='red' containerStyle={{borderColor: '#c1912e', borderWidth: 3, height: 80, width: 80, borderRadius: 50}}/>
+            <Icon large  name='x' type='foundation' color='red' containerStyle={{borderColor: 'red', backgroundColor: '#28292B', borderWidth: 3, height: 80, width: 80, borderRadius: 50}}/>
           </TouchableOpacity>
           <TouchableOpacity style={styles.buttonright} onPress={this.yesButton.bind(this)} activeOpacity={0.2}>
-            <Icon  large name='check'  type='foundation' color='lightgreen' containerStyle={{borderColor: '#c1912e', borderWidth: 3, height: 80, width: 80, borderRadius: 50}}/>
+            <Icon  large name='check'  type='foundation' color='lightgreen' containerStyle={{borderColor: 'lightgreen', backgroundColor: '#28292B',borderWidth: 3, height: 80, width: 80, borderRadius: 50}}/>
           </TouchableOpacity>
 
         </View>

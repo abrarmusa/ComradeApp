@@ -43,7 +43,7 @@ let Router = {
         return <FormScreen navigator={navigator} />;
       },
       renderTitle() {
-        return <Text style={{marginTop: 11, color: '#c1912e', fontSize: 16}}>Create an account</Text>
+        return <Text style={{marginTop: 11, color: '#404041', fontSize: 16}}>Create an account</Text>
       }  
     };
   },
@@ -59,7 +59,7 @@ let Router = {
       renderTitle() {
         return (
           <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center', zIndex: 0}}>
-            <Text style={{color:'#c1912e', fontFamily: 'Porter-BoldDEMO', fontSize: 18}}>Comrade</Text>
+            <Text style={{color:'#28292B', fontFamily: 'Porter-BoldDEMO', fontSize: 20}}>Comrade</Text>
           </View>
         );
       },
@@ -76,7 +76,7 @@ let Router = {
                 type='octicon'
                  underlayColor='red'
                onPress={() => console.log('hello')}
-                iconStyle={{color:'#c1912e', margin: 9}}
+                iconStyle={{color:'#28292B', margin: 9}}
               />
           </View>          
              
@@ -89,7 +89,7 @@ let Router = {
                 name='comment-o'
                 type='font-awesome'
                 onPress={() => console.log('hello')}
-                iconStyle={{color:'#c1912e', margin: 9}}
+                iconStyle={{color:'#28292B', margin: 9}}
               />
           </View>       
         );

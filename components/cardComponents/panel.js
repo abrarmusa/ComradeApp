@@ -5,7 +5,8 @@ var Progress = require('react-native-progress');
 import SwipeCards from 'react-native-swipe-cards';
 import LinearGradient from 'react-native-linear-gradient';
 var {height, width} = Dimensions.get('window');
-
+// const { Surface } = require("gl-react-native"); // in React Native context
+// import {Hudson} from "gl-react-instagramfilters";
 
 
 class Panel extends Component {
@@ -34,15 +35,18 @@ class Panel extends Component {
             >
 
         </Image>
+          
+            <View style={{height: 100, backgroundColor: '#28292B'}}>
+              {imgPath}   
+              <Text style={styles.title}>{this.props.name.split(" ")[0]}</Text>
+              <Text style={styles.titletext}>{this.props.weight} {this.props.style}</Text>
+            </View>
+
             
-            <LinearGradient start={[0.0, 1.0]} locations={[0.0,0.5,0.8, 0.9]} end={[0.0, 0.0]} colors={['rgba(5, 5, 5, 1.0)', 'rgba(5, 5, 5, 0.8)', 'rgba(5, 5, 5, 0.4)', 'rgba(5, 5, 5, 0.0)' ]}  style={[styles.rect,{height: 120}, styles.toprect]} >
-              {imgPath}
-            </LinearGradient>
             
             
             
-            <Text style={styles.title}>{this.props.name.split(" ")[0]}</Text>
-            <Text style={styles.titletext}>{this.props.weight} {this.props.style}</Text>
+
 
             
         </View> 
@@ -57,11 +61,11 @@ const styles = StyleSheet.create({
   thumbnail: {
     flex: 1,
     width: width/1.1,
-    height: height/1.4,
+    height: height/1.4 -100,
     resizeMode: 'cover',
-    borderWidth: 1,
-    borderRadius: 5,
-    borderColor: '#c1912e',    
+//     borderWidth: 1,
+//     borderRadius: 5,
+  
   },
   title: {
     fontSize: 20,
@@ -105,9 +109,10 @@ const styles = StyleSheet.create({
   },
   cardface: {
     borderRadius: 5,
-    borderColor: '#c1912e',
-    backgroundColor: 'black',
-    shadowColor: "#c1912e",
+    borderColor: 'white',
+    borderWidth: 2,
+    backgroundColor: '#28292B',
+    shadowColor: "white",
     shadowOpacity: 0.8,
     shadowRadius: 5,
     shadowOffset: {
@@ -120,18 +125,11 @@ const styles = StyleSheet.create({
     width: width/1.1,
     position: 'absolute',
     bottom: 0,
+    height: 100,
     padding: 5,
-    margin: 1,
+    margin: 0,
     width: width/1.1,
-    borderRadius: 5,
-    borderBottomWidth: 1,
-    borderLeftWidth: 1,
-    borderRightWidth: 1,
-    borderBottomLeftRadius: 5,
-    borderBottomRightRadius: 5,
-    borderTopLeftRadius: 0,
-    borderTopRightRadius: 0,    
-    borderColor: '#c1912e',
+
     backgroundColor: 'transparent',
   },
   toprect: {
