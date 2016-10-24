@@ -1,9 +1,10 @@
 import React, { PropTypes, Component, } from 'react'
-import {  StyleSheet, Image} from 'react-native'
+import {  StyleSheet, Image, Dimensions, StatusBar} from 'react-native'
 import { createAnimatableComponent, View, Text } from 'react-native-animatable';
 import { Button, SocialIcon } from 'react-native-elements'
 var Auth0Lock = require('react-native-lock');
 import Router from './router';
+var {height, width} = Dimensions.get('window');
 
 var lock = new Auth0Lock({
   clientId: 'N0KL9HtoTKHrHskugbgqn92c1tMfuTFL',
@@ -16,43 +17,40 @@ var lock = new Auth0Lock({
 });
 
 class StartScreen extends Component {
-
-  render() {
-    lock.authenticationAPI();
-//     lock.show({}, (err, profile, token) => {
-//     if (err) {
-//       console.log(err);
-//       return;
-//     }
-//     // Authentication worked!
-//     console.log(profile);
-//     console.log('Logged in with Auth0!');
-//     });    
+  
+  handleSignIn(){
+    lock.authenticate('facebook',{}, (err, profile, token) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log(profile);
+        console.log('Logged in!');
+        let route = Router.getFormRoute();
+        this.props.navigator.push(route);
+      }
+//             let route = Router.getFormRoute();
+//             this.props.navigator.push(route);      
+    });
+  }
+  render() {  
     return (
         <View animation="fadeIn" delay={1000} style={styles.innerbox}>
+        <StatusBar barStyle="light-content"/>
           <Image
             style={styles.mainlogo}
-            source={require('../images/comrade_logo_alt.png')}
+            source={require('../images/comrade_logo.png')}
           />
           <Image
             style={styles.textlogo}
-            source={require('../images/comrade_text_logo_alt.png')}
+            source={require('../images/comrade_text_logo.png')}
           />
 
         <SocialIcon
           title='Sign In With Facebook'
-          style={{borderRadius: 0, padding: 10}}
+          style={{borderRadius: 0, margin:10,padding: 10,width: width-20}}
           button
           type='facebook'
-          onPress={() => {
-//             let route = Router.getFormRoute();
-//             this.props.navigator.push(route);
-            lock.authenticate('facebook',{}, (err, profile, token) => {
-              console.log(profile);
-              console.log('Logged in!');
-            });
-//             lock.authentica
-          }}          
+          onPress={this.handleSignIn.bind(this)}          
         />        
         </View>
 

@@ -4,12 +4,8 @@ import StartScreen from './startScreen.js'
 import FormScreen from './formScreen.js'
 import { Button } from 'react-native-elements'
 import Router from './router'
-// import CustomNavbar from './customNavbar'
 import ExNavigator from '@exponent/react-native-navigator';
-// import {
-//   NavigationProvider,
-//   StackNavigation,
-// } from '@exponent/ex-navigation';
+import GLOBALS from './globals';
 
 
 class InitScreen extends Component {
@@ -21,28 +17,22 @@ class InitScreen extends Component {
 
   render() {
     return (
-//               <ExNavigator 
-//           initialRoute={Router.getHomeRoute(navigator)} 
-//           style={{ flex: 1, backgroundColor: '#efebe6'}} 
+
+//               <ExNavigator initialRoute={Router.getInitialRoute()} 
+//           style={{ flex: 1, backgroundColor: 'black'}} 
 //           navigationBarStyle={{backgroundColor: 'transparent', borderBottomWidth:0}} 
-//           barButtonIconStyle={{tintColor: '#28292B',zIndex: 0}} 
-//           sceneStyle={{ backgroundColor: '#c1912e', paddingTop: 0, zIndex:1}}
-//       >      
-              <ExNavigator initialRoute={Router.getInitialRoute()} 
+//           barButtonIconStyle={{tintColor: GLOBALS.COLORS.ALT1,zIndex: 0}} 
+//           sceneStyle={{ backgroundColor: GLOBALS.COLORS.MAIN, paddingTop: 0, zIndex:1}}
+//           />
+
+      <ExNavigator 
+          initialRoute={Router.getHomeRoute(navigator)} 
           style={{ flex: 1, backgroundColor: 'black'}} 
-          navigationBarStyle={{backgroundColor: 'transparent', borderBottomWidth:0}} 
-          barButtonIconStyle={{tintColor: '#404041',zIndex: 0}} 
-          sceneStyle={{ backgroundColor: '#c1912e', paddingTop: 0, zIndex:1}}
-      >     
-
- 
-
-
+          navigationBarStyle={{backgroundColor: 'rgba(26, 28, 28, 0.0)', borderBottomWidth:0}} 
+          barButtonIconStyle={{tintColor: GLOBALS.COLORS.ALT1 ,zIndex: 0}} 
+          sceneStyle={{ backgroundColor: GLOBALS.COLORS.MAIN, paddingTop: 0, zIndex:1}}
+      /> 
       
-      
-
-      <StatusBar barStyle="default" />
-      </ExNavigator>
 
     )
   }

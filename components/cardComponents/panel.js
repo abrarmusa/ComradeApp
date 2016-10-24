@@ -5,6 +5,7 @@ var Progress = require('react-native-progress');
 import SwipeCards from 'react-native-swipe-cards';
 import LinearGradient from 'react-native-linear-gradient';
 var {height, width} = Dimensions.get('window');
+import GLOBALS from '../globals'
 // const { Surface } = require("gl-react-native"); // in React Native context
 // import {Hudson} from "gl-react-instagramfilters";
 
@@ -20,35 +21,21 @@ class Panel extends Component {
     } else if (this.props.style == 'powerlifter') {
       imgPath = <Image style={styles.lifticon} source={require('../../images/powerlifter.png')} />;
     };
-    return (
-
-                    
+    return (        
         <View style={[styles.cardface, this.props.panelStyle, {left: ((width-(width/1.1))/2), top: ((height-(height/1.4))/2)-50}]}>
-
-        <Image style={[styles.thumbnail,this.props.imageStyle]} 
+          <Image style={[styles.thumbnail,this.props.imageStyle]} 
                   indicator={Progress.CircleSnail}
                   indicatorProps={{
                     size: 80,
-                    color: '#c1912e'
+                    color: GLOBALS.COLORS.ALT1
                   }} 
                   source={{uri: this.props.images[1]}}  
-            >
-
-        </Image>
+            />
+        <LinearGradient start={[0.0, 1.0]} locations={[0.0,0.3,0.5,0.8, 0.9]} end={[0.0, 0.0]} colors={['rgba(0,0,0, 1.0)', 'rgba(0,0,0, 0.8)', 'rgba(0,0,0, 0.6)', 'rgba(0,0,0, 0.2)', 'rgba(0,0,0, 0.0)' ]}  style={[styles.rect,{height: 200}]} >
           
-            <View style={{height: 100, backgroundColor: '#28292B'}}>
-              {imgPath}   
-              <Text style={styles.title}>{this.props.name.split(" ")[0]}</Text>
-              <Text style={styles.titletext}>{this.props.weight} {this.props.style}</Text>
-            </View>
-
-            
-            
-            
-            
-
-
-            
+            <Text style={styles.title}>{this.props.name.split(" ")[0]}</Text>
+            <Text style={styles.titletext}>{this.props.age} years - {this.props.weight} kg - {this.props.style}</Text>
+        </LinearGradient>
         </View> 
       
         
@@ -60,8 +47,13 @@ const styles = StyleSheet.create({
 
   thumbnail: {
     flex: 1,
+    borderRadius: 5,
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
+    borderBottomRightRadius: 0,
+    borderBottomLeftRadius: 0,
     width: width/1.1,
-    height: height/1.4 -100,
+    height: height/1.4,
     resizeMode: 'cover',
 //     borderWidth: 1,
 //     borderRadius: 5,
@@ -71,20 +63,19 @@ const styles = StyleSheet.create({
     fontSize: 20,
     paddingTop: 7,
     paddingLeft: 9,
-    color: 'white',
+    color: GLOBALS.COLORS.ALT2,
     backgroundColor: 'transparent',
     margin: 10,
-    bottom: 50,
-    left: 5,
+    bottom: 60,
+    textAlign: 'center',
     position: 'absolute',
-    fontSize: 32,
-    fontFamily: "AvenirNext-UltraLight",
-    fontWeight: '300'
+    fontSize: 38,
+    fontFamily: "Porter-BoldDEMO",
   },
   titletext: {
-    fontSize: 20,
+    fontSize: 18,
     paddingLeft: 9,
-    color: 'white',
+    color: GLOBALS.COLORS.TEXT1,
     backgroundColor: 'transparent',
     margin: 10,
     bottom: 30,
@@ -92,50 +83,21 @@ const styles = StyleSheet.create({
     position: 'absolute',
     fontSize: 22,
     fontFamily: "AvenirNext-UltraLight",
-    fontWeight: '300'
+    fontWeight: '500'
   },  
-  text: {
-    fontSize: 20,
-    paddingTop: 5,
-    marginBottom: 5,
-    color: 'white',
-    backgroundColor: 'transparent',
-    alignSelf: 'stretch',
-    marginLeft: 10,
-    width: width/1.1 - 20,
-    fontSize: 20,
-    fontFamily: "AvenirNext-UltraLight",
-    fontWeight: '100'
-  },
   cardface: {
     borderRadius: 5,
-    borderColor: 'white',
-    borderWidth: 2,
-    backgroundColor: '#28292B',
-    shadowColor: "white",
-    shadowOpacity: 0.8,
-    shadowRadius: 5,
-    shadowOffset: {
-      height: 0,
-      width: 0
-    },
+    backgroundColor: GLOBALS.COLORS.ALT3,
   },
   rect: {
-    flex: 1,
-    width: width/1.1,
     position: 'absolute',
-    bottom: 0,
-    height: 100,
-    padding: 5,
-    margin: 0,
     width: width/1.1,
-
-    backgroundColor: 'transparent',
+    bottom: 0,
+    borderRadius: 5,
+    borderBottomRightRadius: 5,
+    borderBottomLeftRadius: 5,    
+//     zIndex: 500
   },
-  toprect: {
-    margin: 0,
-  },
-
   lifticon: {
     height: 60,
     position: 'absolute',

@@ -6,6 +6,7 @@ import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import Swiper from 'react-native-swiper';
 import LinearGradient from 'react-native-linear-gradient';
 import { Icon } from 'react-native-elements'
+import GLOBALS from '../globals'
 var {height, width} = Dimensions.get('window');
 
 
@@ -23,20 +24,17 @@ class AthleteProfile extends Component {
   render() {
     let imgPath;
     if (this.props.athlete.style == 'weightlifter'){
-      imgPath = <Image style={{height:40, width: 40, alignSelf: 'center', zIndex: 10}}  source={require('../../images/weightlifter_dark.png')}/>;
+      imgPath = <Image style={{height:40, width: 40, alignSelf: 'center', zIndex: 10}}  source={require('../../images/weightlifter.png')}/>;
     } else if (this.props.athlete.style == 'bodybuilder') {
-      imgPath = <Image style={{height:40, width: 40, alignSelf: 'center', zIndex: 10}}  source={require('../../images/bodybuilder_dark.png')}/>;
+      imgPath = <Image style={{height:40, width: 40, alignSelf: 'center', zIndex: 10}}  source={require('../../images/bodybuilder.png')}/>;
     } else if (this.props.athlete.style == 'powerlifter') {
-      imgPath = <Image style={{height:40, width: 40, alignSelf: 'center', zIndex: 10}} source={require('../../images/powerlifter_dark.png')}/>;
+      imgPath = <Image style={{height:40, width: 40, alignSelf: 'center', zIndex: 10}} source={require('../../images/powerlifter.png')}/>;
     };    
     return (
 
     <ParallaxScrollView
-//       backgroundColor="rgba(0,0,0,0.3)"
-      contentBackgroundColor="#c1912e"
+      contentBackgroundColor={GLOBALS.COLORS.MAIN}
       parallaxHeaderHeight={500}
-     
-//       stickyHeaderHeight={400}
       renderForeground={() => (
         <View>
           <Swiper 
@@ -48,13 +46,13 @@ class AthleteProfile extends Component {
               size={50}
               name='chevron-right'
               type='evilicon'
-              color='#c1912e'/>}
+              color={GLOBALS.COLORS.ALT1}/>}
             prevButton={
             <Icon
               size={50}
               name='chevron-left'
               type='evilicon'
-              color='#c1912e'/>}           
+              color={GLOBALS.COLORS.ALT1}/>}           
               >
             {this.props.athlete.images.map(function(item, index){
               console.log(item);
@@ -64,7 +62,7 @@ class AthleteProfile extends Component {
                     indicator={Progress.CircleSnail}
                     indicatorProps={{
                       size: 80,
-                      color: '#c1912e'
+                      color: GLOBALS.COLORS.ALT1
                     }} />                  
                 </View>         
               )
@@ -89,12 +87,12 @@ class AthleteProfile extends Component {
      backgroundColor="blue"
      barStyle="light-content"
    />        
-      <LinearGradient start={[0.0, 1.0]} locations={[0.0,0.3,0.5,0.8, 0.9]} end={[0.0, 0.0]} colors={['rgba(193, 145, 46, 1.0)', 'rgba(193, 145, 46, 0.8)', 'rgba(193, 145, 46, 0.6)', 'rgba(193, 145, 46, 0.2)', 'rgba(193, 145, 46, 0.0)' ]}  style={[styles.rect,{height: 200}]} />
+      <LinearGradient start={[0.0, 1.0]} locations={[0.0,0.3,0.5,0.8, 0.9]} end={[0.0, 0.0]} colors={['rgba(26,28,28, 1.0)', 'rgba(26,28,28, 0.8)', 'rgba(26,28,28, 0.6)', 'rgba(26,28,28, 0.2)', 'rgba(26,28,28, 0.0)' ]}  style={[styles.rect,{height: 200}]} />
        <View style={styles.bignamecont}>
          <Text style={styles.bigname}>{this.props.athlete.name.split(" ")[0]}</Text>
          <Text style={styles.bigname}>{this.props.athlete.name.split(" ")[1]}</Text>
-        </View>
-        <View style={{ height: 500, backgroundColor: 'transparent' }}>
+      </View>
+      <View style={{ height: 500, backgroundColor: 'transparent' }}>
         <View style={styles.captions}>
           <View style={styles.captextblock}>
             <Text style={styles.bodytextbig}>{this.props.athlete.height}</Text>
@@ -119,7 +117,7 @@ class AthleteProfile extends Component {
             size={20}
             name='map-o'
             type='font-awesome'
-            color='#28292B'/>    
+            color={GLOBALS.COLORS.ALT1}/>    
           <Text style={styles.bodytexttitlebig}>Works out at</Text>
         </View>
         <View style={styles.bodysection}>
@@ -130,7 +128,7 @@ class AthleteProfile extends Component {
             size={20}
             name='trophy'
             type='font-awesome'
-            color='#28292B'/>    
+            color={GLOBALS.COLORS.ALT1}/>    
           <Text style={styles.bodytexttitlebig}>Achievements</Text>
         </View>
         <View style={styles.bodysection}>
@@ -141,7 +139,7 @@ class AthleteProfile extends Component {
             size={20}
             name='flag-checkered'
             type='font-awesome'
-            color='#28292B'/>    
+            color={GLOBALS.COLORS.ALT1}/>    
           <Text style={styles.bodytexttitlebig}>Goals</Text>
         </View>
         <View style={styles.bodysection}>
@@ -152,7 +150,7 @@ class AthleteProfile extends Component {
             size={20}
             name='instagram'
             type='font-awesome'
-            color='#28292B'/>    
+            color={GLOBALS.COLORS.ALT1}/>    
           <Text style={styles.bodytexttitlebig}>Instagram</Text>
         </View>
         <View style={styles.bodysection}>
@@ -201,7 +199,7 @@ const styles = StyleSheet.create({
   slide3: {
   },
   text: {
-    color: '#fff',
+    color: GLOBALS.COLORS.ALT1,
     fontSize: 30,
     fontWeight: 'bold',
   },
@@ -225,7 +223,7 @@ const styles = StyleSheet.create({
   bodysectionheader: {
     flexDirection: 'row',
     marginTop: 20,
-    borderColor: '#28292B',
+    borderColor: GLOBALS.COLORS.ALT1,
     borderBottomWidth: 2,
     backgroundColor: 'transparent',
     alignItems: 'flex-start',
@@ -243,19 +241,19 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir',
     fontWeight: '900',
     textAlign: 'left',
-    color: '#28292B',
+    color: GLOBALS.COLORS.ALT2,
     fontSize: 18
   },    
   captext: {
     fontFamily: 'Porter-BoldDEMO',
     textAlign: 'center',
-    color: '#28292B'
+    color: GLOBALS.COLORS.ALT1
   },
   bodytextbig: {
     fontFamily: 'Avenir',
     fontWeight: '900',
     textAlign: 'center',
-    color: '#28292B',
+    color: GLOBALS.COLORS.ALT2,
     fontSize: 18
   },  
   bodytexttitlebig: {
@@ -263,7 +261,7 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     textAlign: 'center',
     marginLeft: 5,
-    color: '#28292B',
+    color: GLOBALS.COLORS.ALT1,
     fontSize: 20
   },    
   captextblock: {
@@ -277,7 +275,7 @@ const styles = StyleSheet.create({
   },
   bigname:{
     fontSize: 44,
-    color: '#28292B',
+    color: GLOBALS.COLORS.TEXT1,
     fontFamily: "Porter-BoldDEMO",
     textAlign: 'center'
   },

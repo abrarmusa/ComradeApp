@@ -25,11 +25,12 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		15FFC1CE522E49F19AC3ED83 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B94560D297BA4C149901CE0E /* MaterialIcons.ttf */; };
 		1CA1C016BEBE41E5B636F3FE /* libRCTFBSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 733D6D8E2B7D4560907131F5 /* libRCTFBSDK.a */; };
-		2C76709C2B0C5845BA988851 /* libPods-ComradeAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED0737CC1FB607729FB7F3C /* libPods-ComradeAppTests.a */; };
+		1D9A68000767E5A00BBB6409 /* libPods-ComradeApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6057780E94D2371B8D0F309B /* libPods-ComradeApp.a */; };
 		2E5977FD99544838B7C9905C /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E3B1C82D904B98BC33D174 /* libBVLinearGradient.a */; };
 		352F4DFA25974E488F700E5D /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9699299870142768994B3C5 /* Ionicons.ttf */; };
 		535BF2D092024BB294FB81B7 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B1F1C55A494FDF9545E4E6 /* libRNImagePicker.a */; };
 		7041F06200584049868E4767 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22A5E93A74DC4ED095CE87A3 /* EvilIcons.ttf */; };
+		7995ACBADC94AB68DFC2ADB1 /* libPods-ComradeAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 061D3CC44CEBB7D54FB6079C /* libPods-ComradeAppTests.a */; };
 		7CA6B7FCB8D844B18B6F1A18 /* libRCTSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA19DB2C0A54CDFB1150035 /* libRCTSplashScreen.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		92EBC7B66A4540628CC39716 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3C683A1B2464639AFE6B639 /* FontAwesome.ttf */; };
@@ -37,7 +38,6 @@
 		A2B0A9455ED84D64AF15D69C /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 11444AAB5903453BB24FAB80 /* Octicons.ttf */; };
 		A58EB8917928461ABEF5C6C8 /* libA0RNLock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED1CF0288A348D49752A736 /* libA0RNLock.a */; };
 		A676FA30223D4473A8AC6582 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB40117DD234B02B785977F /* libRNVectorIcons.a */; };
-		A9D0590D663BB0F24AF1B4E6 /* libPods-ComradeApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ABE46ADA018C7E2CA731152 /* libPods-ComradeApp.a */; };
 		CF560981A49E4E0C9FC508EF /* libRCTFBLogin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA617C3E53DC4880AA13E146 /* libRCTFBLogin.a */; };
 		F844C5B01D970ED9007AD30B /* Porter Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F844C5A01D970ECD007AD30B /* Porter Bold.ttf */; };
 		F86B3AC01DB612FA00F490DB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F86B3ABC1DB612FA00F490DB /* FBSDKCoreKit.framework */; };
@@ -192,6 +192,7 @@
 		00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTVibration.xcodeproj; path = "../node_modules/react-native/Libraries/Vibration/RCTVibration.xcodeproj"; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* ComradeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComradeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0216A30A10BD4D7FB290CEBA /* A0RNLock.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = A0RNLock.xcodeproj; path = "../node_modules/react-native-lock/ios/A0RNLock.xcodeproj"; sourceTree = "<group>"; };
+		061D3CC44CEBB7D54FB6079C /* libPods-ComradeAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ComradeAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CE954449AD4A8FB2214382 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
 		11444AAB5903453BB24FAB80 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
@@ -206,27 +207,26 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		22A5E93A74DC4ED095CE87A3 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		244E4070081844AD9239948A /* RCTFBSDK.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTFBSDK.xcodeproj; path = "../node_modules/react-native-fbsdk/ios/RCTFBSDK.xcodeproj"; sourceTree = "<group>"; };
-		2ED0737CC1FB607729FB7F3C /* libPods-ComradeAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ComradeAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3500F1AAD71AB694415BFB21 /* Pods-ComradeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComradeAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ComradeAppTests/Pods-ComradeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		46E3B1C82D904B98BC33D174 /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
-		4925261DFDF1D2482EE19F40 /* Pods-ComradeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComradeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ComradeApp/Pods-ComradeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5ED1CF0288A348D49752A736 /* libA0RNLock.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libA0RNLock.a; sourceTree = "<group>"; };
-		6ABE46ADA018C7E2CA731152 /* libPods-ComradeApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ComradeApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6057780E94D2371B8D0F309B /* libPods-ComradeApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ComradeApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA19DB2C0A54CDFB1150035 /* libRCTSplashScreen.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTSplashScreen.a; sourceTree = "<group>"; };
 		733D6D8E2B7D4560907131F5 /* libRCTFBSDK.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTFBSDK.a; sourceTree = "<group>"; };
-		78671EB4D1DD338B505741AF /* Pods-ComradeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComradeAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComradeAppTests/Pods-ComradeAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		879F8A2E6A67B763C5D3DD30 /* Pods-ComradeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComradeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ComradeApp/Pods-ComradeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		99FBD1D0679B48208EFB85F9 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		9CB40117DD234B02B785977F /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		9EFCD398D2BD4E85A459EF63 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		A23BD72D7DE64112BA80D868 /* RCTFBLogin.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTFBLogin.xcodeproj; path = "../node_modules/react-native-facebook-login/RCTFBLogin.xcodeproj"; sourceTree = "<group>"; };
 		A454F3E3E79A4D23A2232A90 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
-		B3345C87CC7E64A8C0E7F903 /* Pods-ComradeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComradeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComradeApp/Pods-ComradeApp.release.xcconfig"; sourceTree = "<group>"; };
 		B8DBD6FBC0CC4E84A2EEB327 /* RCTSplashScreen.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTSplashScreen.xcodeproj; path = "../node_modules/rn-splash-screen/ios/RCTSplashScreen.xcodeproj"; sourceTree = "<group>"; };
 		B94560D297BA4C149901CE0E /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		C3C683A1B2464639AFE6B639 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		D3461D07F52442E0984C186E /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		D860A9A0D2B175B6F043B76B /* Pods-ComradeAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComradeAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ComradeAppTests/Pods-ComradeAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DF8BFC66D35C08138B397663 /* Pods-ComradeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComradeAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComradeAppTests/Pods-ComradeAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		E0EDBDD6FA6AEB3DD0A455BC /* Pods-ComradeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComradeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComradeApp/Pods-ComradeApp.release.xcconfig"; sourceTree = "<group>"; };
 		E1B1F1C55A494FDF9545E4E6 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
 		EA617C3E53DC4880AA13E146 /* libRCTFBLogin.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTFBLogin.a; sourceTree = "<group>"; };
 		F204017D36044248A25BE7D1 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
@@ -245,7 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
-				2C76709C2B0C5845BA988851 /* libPods-ComradeAppTests.a in Frameworks */,
+				7995ACBADC94AB68DFC2ADB1 /* libPods-ComradeAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +274,8 @@
 				2E5977FD99544838B7C9905C /* libBVLinearGradient.a in Frameworks */,
 				A58EB8917928461ABEF5C6C8 /* libA0RNLock.a in Frameworks */,
 				1CA1C016BEBE41E5B636F3FE /* libRCTFBSDK.a in Frameworks */,
-				A9D0590D663BB0F24AF1B4E6 /* libPods-ComradeApp.a in Frameworks */,
 				CF560981A49E4E0C9FC508EF /* libRCTFBLogin.a in Frameworks */,
+				1D9A68000767E5A00BBB6409 /* libPods-ComradeApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,8 +367,8 @@
 				F86B3ABD1DB612FA00F490DB /* FBSDKLoginKit.framework */,
 				F86B3ABE1DB612FA00F490DB /* FBSDKMessengerShareKit.framework */,
 				F86B3ABF1DB612FA00F490DB /* FBSDKShareKit.framework */,
-				6ABE46ADA018C7E2CA731152 /* libPods-ComradeApp.a */,
-				2ED0737CC1FB607729FB7F3C /* libPods-ComradeAppTests.a */,
+				6057780E94D2371B8D0F309B /* libPods-ComradeApp.a */,
+				061D3CC44CEBB7D54FB6079C /* libPods-ComradeAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -423,7 +423,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				CAA4AB48600248D4AAD1B9A3 /* Resources */,
 				4A0B66E92F13F79723525F42 /* Frameworks */,
-				A5ECAA904457170BC12627AE /* Pods */,
+				C568B325FE525AD1E82CF863 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -438,13 +438,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A5ECAA904457170BC12627AE /* Pods */ = {
+		C568B325FE525AD1E82CF863 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4925261DFDF1D2482EE19F40 /* Pods-ComradeApp.debug.xcconfig */,
-				B3345C87CC7E64A8C0E7F903 /* Pods-ComradeApp.release.xcconfig */,
-				3500F1AAD71AB694415BFB21 /* Pods-ComradeAppTests.debug.xcconfig */,
-				78671EB4D1DD338B505741AF /* Pods-ComradeAppTests.release.xcconfig */,
+				879F8A2E6A67B763C5D3DD30 /* Pods-ComradeApp.debug.xcconfig */,
+				E0EDBDD6FA6AEB3DD0A455BC /* Pods-ComradeApp.release.xcconfig */,
+				D860A9A0D2B175B6F043B76B /* Pods-ComradeAppTests.debug.xcconfig */,
+				DF8BFC66D35C08138B397663 /* Pods-ComradeAppTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -535,12 +535,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ComradeAppTests" */;
 			buildPhases = (
-				3191F0A2AD3CA77E4A7E0648 /* [CP] Check Pods Manifest.lock */,
+				5A9AF780A00EF48C4BAAB242 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				88882C2B6A22C56A984CE7EA /* [CP] Embed Pods Frameworks */,
-				EED7B3C9A0D46EF44FBD567D /* [CP] Copy Pods Resources */,
+				4F7D37B58F5396488BF2F395 /* [CP] Embed Pods Frameworks */,
+				874A70FAE5EEA23F9300127F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -556,13 +556,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ComradeApp" */;
 			buildPhases = (
-				4F5FD11507021F239DEC2FCE /* [CP] Check Pods Manifest.lock */,
+				2750567691625A08F70DD388 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				7B880F5B82870033BCE2C34E /* [CP] Embed Pods Frameworks */,
-				4A16A74E7A3C2E74FB84A885 /* [CP] Copy Pods Resources */,
+				C65FFC4DAB56C0F065BF37E7 /* [CP] Embed Pods Frameworks */,
+				CEFD6B5EE5B3A84C7756118B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -857,7 +857,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
 		};
-		3191F0A2AD3CA77E4A7E0648 /* [CP] Check Pods Manifest.lock */ = {
+		2750567691625A08F70DD388 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -872,52 +872,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		4A16A74E7A3C2E74FB84A885 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ComradeApp/Pods-ComradeApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4F5FD11507021F239DEC2FCE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		7B880F5B82870033BCE2C34E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ComradeApp/Pods-ComradeApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		88882C2B6A22C56A984CE7EA /* [CP] Embed Pods Frameworks */ = {
+		4F7D37B58F5396488BF2F395 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -932,7 +887,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ComradeAppTests/Pods-ComradeAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EED7B3C9A0D46EF44FBD567D /* [CP] Copy Pods Resources */ = {
+		5A9AF780A00EF48C4BAAB242 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		874A70FAE5EEA23F9300127F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -945,6 +915,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ComradeAppTests/Pods-ComradeAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C65FFC4DAB56C0F065BF37E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ComradeApp/Pods-ComradeApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEFD6B5EE5B3A84C7756118B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ComradeApp/Pods-ComradeApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -991,7 +991,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3500F1AAD71AB694415BFB21 /* Pods-ComradeAppTests.debug.xcconfig */;
+			baseConfigurationReference = D860A9A0D2B175B6F043B76B /* Pods-ComradeAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = ASEDTDJMX8;
@@ -1002,11 +1002,7 @@
 				INFOPLIST_FILE = ComradeAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ComradeApp.app/ComradeApp";
@@ -1015,7 +1011,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78671EB4D1DD338B505741AF /* Pods-ComradeAppTests.release.xcconfig */;
+			baseConfigurationReference = DF8BFC66D35C08138B397663 /* Pods-ComradeAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -1023,11 +1019,7 @@
 				INFOPLIST_FILE = ComradeAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ComradeApp.app/ComradeApp";
@@ -1036,7 +1028,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4925261DFDF1D2482EE19F40 /* Pods-ComradeApp.debug.xcconfig */;
+			baseConfigurationReference = 879F8A2E6A67B763C5D3DD30 /* Pods-ComradeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1074,7 +1066,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3345C87CC7E64A8C0E7F903 /* Pods-ComradeApp.release.xcconfig */;
+			baseConfigurationReference = E0EDBDD6FA6AEB3DD0A455BC /* Pods-ComradeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

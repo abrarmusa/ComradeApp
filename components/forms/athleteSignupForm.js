@@ -3,6 +3,7 @@ import { View, StyleSheet, TouchableHighlight, TouchableOpacity, Text, PixelRati
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { Icon } from 'react-native-elements'
 import Router from '../router'
+import GLOBALS from '../globals'
 import ImagePicker from 'react-native-image-picker';
 var t = require('tcomb-form-native');
 
@@ -44,18 +45,18 @@ Form.stylesheet.controlLabel.normal.color = 'black';
 Form.stylesheet.controlLabel.normal.top = 10;
 Form.stylesheet.controlLabel.error.marginTop = 10;
 Form.stylesheet.controlLabel.normal.borderBottomWidth = 1;
-Form.stylesheet.controlLabel.normal.borderBottomColor = '#404041';
+Form.stylesheet.controlLabel.normal.borderBottomColor = GLOBALS.COLORS.ALT1;
 Form.stylesheet.formGroup.normal.borderBottomWidth = 1;
-Form.stylesheet.formGroup.normal.borderBottomColor = '#404041';
+Form.stylesheet.formGroup.normal.borderBottomColor = GLOBALS.COLORS.ALT1;
 Form.stylesheet.formGroup.error.borderBottomWidth = 1;
-Form.stylesheet.formGroup.error.borderBottomColor = '#404041';
+Form.stylesheet.formGroup.error.borderBottomColor = GLOBALS.COLORS.ALT1;
 Form.stylesheet.controlLabel.normal.fontSize = 15;
 Form.stylesheet.controlLabel.error.fontSize = 15;
-Form.stylesheet.pickerValue.normal.color = '#404041';
+Form.stylesheet.pickerValue.normal.color = GLOBALS.COLORS.ALT1;
 Form.stylesheet.pickerValue.normal.fontSize = 15;
-Form.stylesheet.pickerValue.error.color = '#404041';
+Form.stylesheet.pickerValue.error.color = GLOBALS.COLORS.ALT1;
 Form.stylesheet.pickerValue.error.fontSize = 15;
-Form.stylesheet.itemStyle.color = '#404041';
+Form.stylesheet.itemStyle.color = GLOBALS.COLORS.ALT1;
 Form.stylesheet.itemStyle.fontSize = 15;
 // Form.stylesheet.pickerTouchable.normal.color = 'white';
 Form.itemStyle = {color:'#c1912e'};
@@ -66,42 +67,42 @@ var athlete_options = {
   fields: {
     name:{
       placeholder: 'Your name',
-      placeholderTextColor:'#404041'
+      placeholderTextColor:GLOBALS.COLORS.ALT1
     },
     email:{
       placeholder: 'Your email',
-      placeholderTextColor:'#404041'      
+      placeholderTextColor:GLOBALS.COLORS.ALT1      
     },
     password: {
       password: true,
       //       secureTextEntry: true,
       placeholder: 'Enter a password',
-      placeholderTextColor:'#404041'      
+      placeholderTextColor:GLOBALS.COLORS.ALT1      
     },
     height:{
       placeholder: 'Your height eg. 5 ft 9 in',
-      placeholderTextColor:'#404041'      
+      placeholderTextColor:GLOBALS.COLORS.ALT1      
     },
     weight:{
       placeholder: 'Your weight eg. 284 lbs',
-      placeholderTextColor:'#404041'      
+      placeholderTextColor:GLOBALS.COLORS.ALT1      
     },
     gym:{
       placeholder: 'Your gym location eg. YMCA Sheppard & Bayview, Toronto',
-      placeholderTextColor:'#404041'      
+      placeholderTextColor:GLOBALS.COLORS.ALT1      
     },
     style: {
       placeholder: 'Your Training Style',
-      placeholderTextColor:'#404041',
+      placeholderTextColor:GLOBALS.COLORS.ALT1,
       nullOption: {value: '', text: 'Pick your type of training'}
     },
     certifications: {
       placeholder: 'Your certifications eg. BCWA certification',
-      placeholderTextColor:'#404041'
+      placeholderTextColor:GLOBALS.COLORS.ALT1
     },
     achievements: {
       placeholder: 'Your achievements eg. 485lb deadlift, 325lb bench',
-      placeholderTextColor:'#404041'
+      placeholderTextColor:GLOBALS.COLORS.ALT1
     },
     interested_in: {
       nullOption: {value: '', text: 'Are you looking for a comrade or a trainer'}
@@ -199,7 +200,7 @@ class AthleteSignupForm extends Component {
       <View style={styles.profile}>
       <TouchableOpacity onPress={this.selectPhotoTapped.bind(this)}>
       <View style={[styles.avatar, styles.avatarContainer, {marginBottom: 20}]}>
-      { this.state.avatarSource === null ? <Icon name='plus' type='octicon' color='#404041' size={40} />
+      { this.state.avatarSource === null ? <Icon name='plus' type='octicon' color={GLOBALS.COLORS.ALT1} size={40} />
       :
       <Image style={styles.avatar} source={this.state.avatarSource} />
     }
@@ -212,7 +213,7 @@ class AthleteSignupForm extends Component {
     type={Athlete}
     options={athlete_options}
     />
-    <TouchableHighlight style={styles.button} onPress={this.onPress.bind(this)} underlayColor='#404041'>
+    <TouchableHighlight style={styles.button} onPress={this.onPress.bind(this)} underlayColor={GLOBALS.COLORS.ALT1}>
     <Text style={styles.buttonText}>Save</Text>
     </TouchableHighlight>
     </View>    
@@ -248,8 +249,8 @@ var styles = StyleSheet.create({
  },
  button: {
   height: 50,
-  backgroundColor: '#404041',
-  borderColor: '#c1912e',
+  backgroundColor: GLOBALS.COLORS.ALT1,
+  borderColor: GLOBALS.COLORS.ALT1,
   borderWidth: 1,
   borderRadius: 0,
   marginBottom: 10,
@@ -257,7 +258,7 @@ var styles = StyleSheet.create({
   justifyContent: 'center'
 },
 avatarContainer: {
-  borderColor: '#404041',
+  borderColor: GLOBALS.COLORS.ALT1,
   borderWidth: 2,
   justifyContent: 'center',
   alignItems: 'center',
@@ -267,7 +268,7 @@ avatarContainer: {
 },
 avatar: {
   borderRadius: 50,
-  borderColor: '#404041',
+  borderColor: GLOBALS.COLORS.ALT1,
   borderWidth: 1,
   width: 100,
   flex: 1,

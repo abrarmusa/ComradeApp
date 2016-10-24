@@ -7,6 +7,7 @@ import AthleteProfile from './cardComponents/athleteProfile'
 import { Button,Icon } from 'react-native-elements'
 import ExNavigator from '@exponent/react-native-navigator';
 import ExSceneConfigs from '@exponent/react-native-navigator';
+import GLOBALS from './globals';
 // Switch to ExNavigation
 // import {
 //   createRouter
@@ -43,7 +44,7 @@ let Router = {
         return <FormScreen navigator={navigator} />;
       },
       renderTitle() {
-        return <Text style={{marginTop: 11, color: '#404041', fontSize: 16}}>Create an account</Text>
+        return <Text style={{marginTop: 11, color:  GLOBALS.COLORS.ALT1, fontSize: 16}}>Create an account</Text>
       }  
     };
   },
@@ -59,7 +60,7 @@ let Router = {
       renderTitle() {
         return (
           <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center', zIndex: 0}}>
-            <Text style={{color:'#28292B', fontFamily: 'Porter-BoldDEMO', fontSize: 20}}>Comrade</Text>
+            <Text style={{color:GLOBALS.COLORS.ALT2, fontFamily: 'Porter-BoldDEMO', fontSize: 20}}>Comrade</Text>
           </View>
         );
       },
@@ -76,7 +77,7 @@ let Router = {
                 type='octicon'
                  underlayColor='red'
                onPress={() => console.log('hello')}
-                iconStyle={{color:'#28292B', margin: 9}}
+                iconStyle={{color:GLOBALS.COLORS.ALT1, margin: 9}}
               />
           </View>          
              
@@ -89,7 +90,7 @@ let Router = {
                 name='comment-o'
                 type='font-awesome'
                 onPress={() => console.log('hello')}
-                iconStyle={{color:'#28292B', margin: 9}}
+                iconStyle={{color: GLOBALS.COLORS.ALT1, margin: 9}}
               />
           </View>       
         );
@@ -118,7 +119,7 @@ let Router = {
                   name='close'
                   type='font-awesome'
                   onPress={() => {navigator.pop();}}
-                  iconStyle={{color:'#c1912e', margin: 9}}
+                  iconStyle={{color:GLOBALS.COLORS.ALT1, margin: 9}}
                 />
             </View>       
           );
@@ -128,16 +129,13 @@ let Router = {
         },      
     }
   }
-//   ATHLETE PROFILE ROUTE
-  
-//
 };
 const styles = StyleSheet.create({
   navbarstyle: {
     backgroundColor: 'red'
   },
   titleName: {
-    color: '#c1912e',
+    color: GLOBALS.COLORS.MAIN,
     fontSize: 24,
     top: 11,
     fontFamily: "AvenirNext-UltraLight",
