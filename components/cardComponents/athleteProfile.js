@@ -1,39 +1,79 @@
 import React, { Component, } from 'react'
-import { View, Text, StyleSheet, Dimensions, StatusBar} from 'react-native'
+import { View, Text, StyleSheet, Dimensions, StatusBar, ListView, TouchableOpacity, TouchableWithoutFeedback} from 'react-native'
 import Image from 'react-native-image-progress';
 var Progress = require('react-native-progress');
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import Swiper from 'react-native-swiper';
-import LinearGradient from 'react-native-linear-gradient';
+import { Col, Row, Grid } from "react-native-easy-grid";
 import { Icon } from 'react-native-elements'
+import LinearGradient from 'react-native-linear-gradient';
+import ImageCarousel from 'react-native-image-carousel';
 import GLOBALS from '../globals'
 var {height, width} = Dimensions.get('window');
 
 
+ const media = [];
+
+
 class AthleteProfile extends Component {
 
+  
   static propTypes = {}
-
+  
   static defaultProps = {}
 
   constructor(props) {
-    super(props)
-    this.state = {}
-  } 
+    super(props);
+    this.state = {
+    };
+  }
+  _renderHeader(){
+    return (
+            <View style={{flex:1, flexDirection:'column', alignItems:'flex-end', justifyContent:'center'}}>
+               <Icon
+                  name='close'
+                  type='font-awesome'
+                  onPress={() => {this.refs.carousel.close();}}
+                  iconStyle={{color:GLOBALS.COLORS.ALT1, margin: 9,alignSelf:'flex-end', textAlign: 'right'}}
+                />
+            </View>  
+    );
+  }
 
+  _renderFooter() {
+    return (
+      <Text style={styles.footerText}>Footer!</Text>
+    );
+  }
+
+  _renderContent(idx: number) {
+    console.log(GLOBALS.PHOTOS[1].media[idx].photo)
+    return (
+      <View>
+      <Image
+        style={{ width: width, height: height-400, marginTop: 200}}
+        source={{ uri: GLOBALS.PHOTOS[1].media[idx].photo }}
+        resizeMode={'contain'}
+      />
+      <Text style={{color: 'white', textAlign: 'center', fontSize: 20, margin: 10, fontFamily: 'Avenir'}}>{GLOBALS.PHOTOS[1].media[idx].caption}</Text>
+      </View>
+    );
+  }
+                 
   render() {
     let imgPath;
     if (this.props.athlete.style == 'weightlifter'){
-      imgPath = <Image style={{height:40, width: 40, alignSelf: 'center', zIndex: 10}}  source={require('../../images/weightlifter.png')}/>;
+      imgPath = <Image style={{height:40, width: 40, alignSelf: 'center', zIndex: 10}}  indicator={Progress.CircleSnail} indicatorProps={{ size: 40, color: GLOBALS.COLORS.ALT1 }} source={require('../../images/weightlifter.png')}/>;
     } else if (this.props.athlete.style == 'bodybuilder') {
-      imgPath = <Image style={{height:40, width: 40, alignSelf: 'center', zIndex: 10}}  source={require('../../images/bodybuilder.png')}/>;
+      imgPath = <Image style={{height:40, width: 40, alignSelf: 'center', zIndex: 10}}  indicator={Progress.CircleSnail} indicatorProps={{ size: 40, color: GLOBALS.COLORS.ALT1 }} source={require('../../images/bodybuilder.png')}/>;
     } else if (this.props.athlete.style == 'powerlifter') {
-      imgPath = <Image style={{height:40, width: 40, alignSelf: 'center', zIndex: 10}} source={require('../../images/powerlifter.png')}/>;
+      imgPath = <Image style={{height:40, width: 40, alignSelf: 'center', zIndex: 10}} indicator={Progress.CircleSnail} indicatorProps={{ size: 40, color: GLOBALS.COLORS.ALT1 }} source={require('../../images/powerlifter.png')}/>;
     };    
     return (
 
     <ParallaxScrollView
-      contentBackgroundColor={GLOBALS.COLORS.MAIN}
+      contentBackgroundColor={'transparent'}
+      backgroundColor={'transparent'}
       parallaxHeaderHeight={500}
       renderForeground={() => (
         <View>
@@ -66,21 +106,11 @@ class AthleteProfile extends Component {
                     }} />                  
                 </View>         
               )
-
             }.bind(this))
-                                           }
-
-
+          }
             </Swiper> 
           </View>
 
-
-//       <View>
-//         <Image source={{uri: this.props.athlete.gif}} style={styles.image}/>
-//         <Text>{this.props.athlete.name}</Text>
-          
-
-//       </View>
       )}
       >
    <StatusBar
@@ -92,25 +122,34 @@ class AthleteProfile extends Component {
          <Text style={styles.bigname}>{this.props.athlete.name.split(" ")[0]}</Text>
          <Text style={styles.bigname}>{this.props.athlete.name.split(" ")[1]}</Text>
       </View>
-      <View style={{ height: 500, backgroundColor: 'transparent' }}>
+      <View style={{  backgroundColor: 'transparent' }}>
         <View style={styles.captions}>
           <View style={styles.captextblock}>
             <Text style={styles.bodytextbig}>{this.props.athlete.height}</Text>
             <Image
             style={{height:40, width: 40, alignSelf: 'center'}}
+            indicator={Progress.CircleSnail}
+            indicatorProps={{
+              size: 40,
+              color: GLOBALS.COLORS.ALT1
+            }}             
             source={require('../../images/height.png')}/>
           </View>          
           <View style={styles.captextblock}>
             <Text style={styles.bodytextbig}>{this.props.athlete.weight}</Text>
             <Image
             style={{height:40, width: 40, alignSelf: 'center'}}
+            indicator={Progress.CircleSnail}
+            indicatorProps={{
+              size: 40,
+              color: GLOBALS.COLORS.ALT1
+            }}                     
             source={require('../../images/weight.png')}/>
           </View>
           <View style={styles.captextblock}>
             <Text style={styles.bodytextbig}>{this.props.athlete.style}</Text>
             {imgPath}
           </View>
-
         </View>
         <View style={styles.bodysectionheader}>
           <Icon
@@ -153,9 +192,24 @@ class AthleteProfile extends Component {
             color={GLOBALS.COLORS.ALT1}/>    
           <Text style={styles.bodytexttitlebig}>Instagram</Text>
         </View>
-        <View style={styles.bodysection}>
-          <Text style={styles.bodysectiontext}>{this.props.athlete.goals}</Text>
-        </View>          
+          <ImageCarousel
+            ref="carousel"
+            renderContent={this._renderContent}
+            renderHeader={this._renderHeader.bind(this)}
+            renderFooter={this._renderFooter}
+            style={{marginLeft:30, marginRight: 30, marginTop: 10}}
+          >
+            {GLOBALS.PHOTOS[1].media.map(function(item,index){
+              return(<Image
+                key={item.photo}
+                style={{height: 120 , width:(width-60)/3}}
+                source={{ uri: item.photo, height: 120}}
+                resizeMode={'cover'}
+              />)
+            })
+            }
+          </ImageCarousel>
+       
            
       </View>
     </ParallaxScrollView>      
@@ -234,7 +288,13 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     marginLeft:30,
     marginRight:30
-  },   
+  },
+  gallerysection: {
+    marginLeft:30,
+    flexDirection: 'row',
+    marginRight:30,
+    height: 400
+  },     
   bodysectiontext: {
     marginTop: 10,
     marginBottom: 10,

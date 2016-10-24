@@ -1,4 +1,12 @@
+import React, { Component, } from 'react'
+import { View, Text, StyleSheet, Dimensions, StatusBar, ListView, TouchableOpacity} from 'react-native'
+import Image from 'react-native-image-progress';
+var Progress = require('react-native-progress');
+var {height, width} = Dimensions.get('window');
+import { Col, Row, Grid } from "react-native-easy-grid";
+import { Icon } from 'react-native-elements'
 module.exports = {
+
   BARSTYLE: 'light-content',
   COLORS: {
     MAIN: '#1A1C1C',
@@ -20,5 +28,39 @@ module.exports = {
       {key:3, name: "BART KWAN",age: 26, from: "../../images/flags/USA.png",height:"5ft 9in", weight:"95 kg", goals:"I want to come in first place at the LA FitExpo powerlifting meet next year", gym:"Barbell Brigade LA", certifications: [], style:"powerlifter", achievements: "355lb bench, 600lb deadlift, 525lb squat" , images: [ "https://j.gifs.com/98p8LJ.gif" , "https://67.media.tumblr.com/12f36e0a9922b4bf914d473861ec88f5/tumblr_nof5k2ib301rs2stqo1_500.jpg", "http://royalgram.co.uk/wp-content/uploads/2015/07/Meester-@bartkwan-says-buy-a-pair-of-Camo-Gangsta-wraps-before-he-goes-all-Bruce-Lee-all-over-face-H.jpg"]},
       {key:4, name: "NIKKI BLACKETTER",age: 26, from: "../../images/flags/England.png",height:"5ft 6in", weight:"55 kg", goals: "Have a more toned body by lowering body fat percentage through regular intense workouts", gym:"Barbell Brigade LA", certifications: [], style:"bodybuilder", achievements: "Gymshark Athlete" , images: ["https://45.media.tumblr.com/1a639b1822518334eb45784f1cd4844f/tumblr_o2p95nBwfR1sqw7fko1_400.gif", "https://yt3.ggpht.com/-9zzvbyOfmko/AAAAAAAAAAI/AAAAAAAAAAA/QvN6Z4C9x9M/s900-c-k-no-mo-rj-c0xffffff/photo.jpg", "http://www.girlswithmuscle.com/images/full/869471746.jpg" ]}
     ],
-  CARDS2: []
+  CARDS2: [],
+  PHOTOS: [
+  {
+    title: 'Single photo',
+    description: 'with caption, no grid button',
+    enableGrid: false,
+    media: [{
+      photo: 'http://farm3.static.flickr.com/2667/4072710001_f36316ddc7_b.jpg',
+      caption: 'Grotto of the Madonna',
+    }],
+  }, {
+    title: 'Multiple photos',
+    description: 'with captions and nav arrows',
+    displayNavArrows: true,
+    displayActionButton: true,
+    media: [{
+      photo: 'http://farm3.static.flickr.com/2667/4072710001_f36316ddc7_b.jpg',
+      selected: true,
+      caption: 'Grotto of the Madonna',
+    }, {
+      photo: 'http://farm3.static.flickr.com/2449/4052876281_6e068ac860_b.jpg',
+      caption: 'Broadchurch Scene',
+    }, {
+      photo: 'http://farm3.static.flickr.com/2449/4052876281_6e068ac860_b.jpg',
+      thumb: 'http://farm3.static.flickr.com/2449/4052876281_6e068ac860_q.jpg',
+      selected: false,
+      caption: 'Beautiful Eyes',
+    }, {
+      photo: 'http://farm3.static.flickr.com/2449/4052876281_6e068ac860_b.jpg',
+      thumb: 'http://farm3.static.flickr.com/2449/4052876281_6e068ac860_q.jpg',
+      selected: false,
+      caption: 'Beautiful Eyes',
+    }],
+  }
+  ],  
 };
