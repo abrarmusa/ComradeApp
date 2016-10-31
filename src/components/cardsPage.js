@@ -1,16 +1,17 @@
 import React, { Component, } from 'react'
-import {StyleSheet, View, Text, Dimensions, StatusBar, TouchableOpacity, Animated} from 'react-native'
+import {StyleSheet, View, Text, Dimensions, StatusBar, TouchableOpacity, Animated, Linking} from 'react-native'
 import Image from 'react-native-image-progress';
 import { ButtonGroup, Icon } from 'react-native-elements'
 var Progress = require('react-native-progress');
 import SwipeCards from 'react-native-swipe-cards';
 import LinearGradient from 'react-native-linear-gradient';
-import Router from './router'
-import GLOBALS from './globals'
+import Router from '../router'
+import GLOBALS from '../globals'
+import Auth from '../auth'
 import Panel from './cardComponents/panel'
 import NoMoreCards from './cardComponents/noMoreCards'
-var {height, width} = Dimensions.get('window');
 
+var {height, width} = Dimensions.get('window');
 
 
 class CardsPage extends Component {
@@ -22,12 +23,10 @@ class CardsPage extends Component {
       selectedIndex: 2,
     }
   }
-
   
   clickHandle (card){
+    Auth.instagramAuthenticate()
     console.log(card)
-    let route = Router.getAthleteProfile(card);
-    this.props.navigator.push(route);
   }
   handleYup (card) {
     console.log("yup")

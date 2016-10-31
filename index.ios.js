@@ -9,7 +9,7 @@ import {
   AppRegistry
 } from 'react-native';
 import SplashScreen from "rn-splash-screen";
-import InitScreen from './components/initScreen.js'
+import InitScreen from './src/components/initScreen.js'
 SplashScreen.hide();
 class ComradeApp extends Component {
   render() {

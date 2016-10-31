@@ -5,7 +5,7 @@ var Progress = require('react-native-progress');
 import SwipeCards from 'react-native-swipe-cards';
 import LinearGradient from 'react-native-linear-gradient';
 var {height, width} = Dimensions.get('window');
-import GLOBALS from '../globals'
+import GLOBALS from '../../globals'
 // const { Surface } = require("gl-react-native"); // in React Native context
 // import {Hudson} from "gl-react-instagramfilters";
 

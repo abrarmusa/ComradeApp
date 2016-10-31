@@ -1,9 +1,10 @@
 import React from 'react'
 import { View, Text, StyleSheet, Navigator } from 'react-native'
-import StartScreen from './startScreen.js'
-import FormScreen from './formScreen.js'
-import CardsPage from './cardsPage.js'
-import AthleteProfile from './cardComponents/athleteProfile'
+import StartScreen from './components/startScreen.js'
+import FormScreen from './components/formScreen.js'
+import CardsPage from './components/cardsPage.js'
+import SettingsPage from './components/settingsPage.js'
+import AthleteProfile from './components/cardComponents/athleteProfile'
 import { Button,Icon } from 'react-native-elements'
 import ExNavigator from '@exponent/react-native-navigator';
 import ExSceneConfigs from '@exponent/react-native-navigator';
@@ -22,8 +23,9 @@ import GLOBALS from './globals';
 
 
 let Router = {
+  
 //   MAIN PAGE ROUTE
-  getInitialRoute() {
+  getInitialRoute(navigator) {
     console.log('Getting Initial route');
     return {
       showNavigationBar: false,
@@ -34,14 +36,13 @@ let Router = {
   },
 
 // FORM PAGE ROUTE
-  getFormRoute() {
+  getFormRoute(user) {
     console.log('Getting form route');
     
     return {
       showNavigationBar: true,
       renderScene(navigator) {
-        console.log(navigator.navigationBarStyle);
-        return <FormScreen navigator={navigator} />;
+        return <FormScreen navigator={navigator} user={user}/>;
       },
       renderTitle() {
         return <Text style={{marginTop: 11, color:  GLOBALS.COLORS.ALT1, fontSize: 16}}>Create an account</Text>
@@ -65,25 +66,21 @@ let Router = {
         );
       },
 
-      getTitle() {
-        return 'back';
-      },
-
-      renderLeftButton(){
+      renderLeftButton(navigator){
         return (
           <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center', zIndex: 0}}>
              <Icon
                 name='person'
                 type='octicon'
                  underlayColor='red'
-               onPress={() => console.log('hello')}
+                 onPress={() => navigator.push(Router.getSettingsRoute())}
                 iconStyle={{color:GLOBALS.COLORS.ALT1, margin: 9}}
               />
           </View>          
              
         )
       },
-      renderRightButton() {
+      renderRightButton(navigator) {
         return (
           <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
              <Icon
@@ -128,7 +125,48 @@ let Router = {
             return Navigator.SceneConfigs.FloatFromBottom;
         },      
     }
-  }
+  },
+  
+   getSettingsRoute(){
+      return {
+        renderScene(navigator) {
+          return <SettingsPage navigator={navigator}/>;
+        },
+        
+        renderTitle() {
+          return (
+            <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center', zIndex: 0}}>
+              <Icon
+                name='person'
+                type='octicon'
+                 underlayColor='red'
+               onPress={() => console.log('hello')}
+                iconStyle={{color:GLOBALS.COLORS.ALT1, margin: 9}}
+              />
+            </View>
+          );
+        },
+        renderLeftButton(){
+          return null;
+        },
+   
+        renderRightButton(navigator) {
+          return (
+            <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
+               <Icon
+                  name='close'
+                  type='font-awesome'
+                  onPress={() => {navigator.pop();}}
+                  iconStyle={{color:GLOBALS.COLORS.ALT1, margin: 9}}
+                />
+            </View>       
+          );
+        },
+        configureScene(){
+            return Navigator.SceneConfigs.FloatFromLeft;
+        },      
+    }
+  } 
 };
 const styles = StyleSheet.create({
   navbarstyle: {

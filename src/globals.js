@@ -1,12 +1,8 @@
-import React, { Component, } from 'react'
-import { View, Text, StyleSheet, Dimensions, StatusBar, ListView, TouchableOpacity} from 'react-native'
-import Image from 'react-native-image-progress';
-var Progress = require('react-native-progress');
-var {height, width} = Dimensions.get('window');
-import { Col, Row, Grid } from "react-native-easy-grid";
-import { Icon } from 'react-native-elements'
-module.exports = {
+var Auth0Lock = require('react-native-lock');
+var lock = new Auth0Lock({clientId: 'N0KL9HtoTKHrHskugbgqn92c1tMfuTFL', domain: 'comrade.auth0.com'});
 
+
+module.exports = {
   BARSTYLE: 'light-content',
   COLORS: {
     MAIN: '#1A1C1C',

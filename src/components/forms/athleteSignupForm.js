@@ -2,8 +2,8 @@ import React, { Component, } from 'react'
 import { View, StyleSheet, TouchableHighlight, TouchableOpacity, Text, PixelRatio, Image, Platform} from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { Icon } from 'react-native-elements'
-import Router from '../router'
-import GLOBALS from '../globals'
+import Router from '../../router'
+import GLOBALS from '../../globals'
 import ImagePicker from 'react-native-image-picker';
 var t = require('tcomb-form-native');
 
@@ -174,15 +174,16 @@ class AthleteSignupForm extends Component {
     var value = this.refs["form"].getValue();
     if (value) { // if validation fails, value will be null
       console.log(value); // value here is an instance of Person
-      console.log(Router.getHomeRoute());
       let route = Router.getHomeRoute();
-      this.props.navigator.push(route);
+      this.props.navigator.replacePrevious(route);
 
     } else {
-      let route = Router.getHomeRoute();
 //       this.props.navigator.props.navigationBarStyle = {backgroundColor: 'red', borderBottomWidth:0};
 //       console.log(this.props.navigator.props.navigationBarStyle);
-      this.props.navigator.push(route);
+      let route = Router.getHomeRoute();      
+      this.props.navigator.replacePrevious(route);
+      this.props.navigator.pop();
+      
 //       REPLACE THE FORM PAGE WITH
 //       this.props.navigator.replaceAtIndex(replacerRoute, 1, function(){
 //       
