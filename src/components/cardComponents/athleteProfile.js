@@ -7,6 +7,7 @@ import Swiper from 'react-native-swiper';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import { Icon } from 'react-native-elements'
 import LinearGradient from 'react-native-linear-gradient';
+import InstagramCarousel from './instagramCarousel';
 import ImageCarousel from 'react-native-image-carousel';
 import GLOBALS from '../../globals'
 var {height, width} = Dimensions.get('window');

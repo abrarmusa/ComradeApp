@@ -1,6 +1,8 @@
 package com.comradeapp;
 
 import com.facebook.react.ReactActivity;
+import io.fullstack.firestack.FirestackPackage;
+import com.RNFetchBlob.RNFetchBlobPackage;
 import com.magus.fblogin.FacebookLoginPackage;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.auth0.lock.react.LockReactPackage;

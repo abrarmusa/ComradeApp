@@ -31,7 +31,7 @@ class FormScreen extends Component {
     return (
       <View style={styles.mainbox}>
         <StatusBar barStyle="light-content"/>
-        {this.state.athlete === true ? <AthleteSignupForm navigator={this.props.navigator}/> : null}
+        {this.state.athlete === true ? <AthleteSignupForm navigator={this.props.navigator} user={this.props.user}/> : null}
         <Tabs style={styles.tabbar} selected={this.state.page} style={styles.tabStyle}
               selectedStyle={{color:'white'}} onSelect={el=>this.setState({athlete:el.props.checkval, page: el.props.name})}>
             <Text name="athlete" style={styles.toptabtext} checkval={true} selectedIconStyle={styles.selectedIcon} >Athlete</Text>

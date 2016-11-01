@@ -6,6 +6,7 @@ var {FBLoginManager} = require('react-native-facebook-login');
 const FBSDK = require('react-native-fbsdk');
 const { GraphRequest, GraphRequestManager } = FBSDK;
 import Router from '../router';
+import Auth from '../auth';
 var {height, width} = Dimensions.get('window');
 FBLoginManager.setLoginBehavior(FBLoginManager.LoginBehaviors.Native)
 
@@ -19,16 +20,21 @@ class StartScreen extends Component {
     }
   
   _responseInfoCallback(error: ?Object, result: ?Object) {
+    var that = this;
     if (error) {
       alert('Error fetching data: ' + error.toString());
     } else {
-      console.log('Success fetching data: ');
+//       console.log('Success fetching data: ');
       console.log(result);
-      var route = Router.getFormRoute(null);
-      this.props.navigator.push(route)
-//       Send data to server to check if user exists
-//       else send data to form and prefill the form
-//       
+      Auth.firebaseAuthenticate(result.id, function(checker){
+        if (checker){
+          let route = Router.getHomeRoute();      
+          that.props.navigator.push(route);
+        } else {
+          var route = Router.getFormRoute(result);
+          that.props.navigator.push(route);
+        }
+      })
     }
   }
   handleConnectivity(isConnected) {
