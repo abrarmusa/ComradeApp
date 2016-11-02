@@ -17,17 +17,13 @@ var {height, width} = Dimensions.get('window');
 
 
 class AthleteProfile extends Component {
-
-  
-  static propTypes = {}
-  
-  static defaultProps = {}
-
+// -------------------------------------------------------------  
   constructor(props) {
     super(props);
     this.state = {
     };
   }
+ // -------------------------------------------------------------   
   _renderHeader(){
     return (
             <View style={{flex:1, flexDirection:'column', alignItems:'flex-end', justifyContent:'center'}}>
@@ -40,13 +36,13 @@ class AthleteProfile extends Component {
             </View>  
     );
   }
-
+// -------------------------------------------------------------  
   _renderFooter() {
     return (
       <Text style={styles.footerText}>Footer!</Text>
     );
   }
-
+// -------------------------------------------------------------  
   _renderContent(idx: number) {
     console.log(GLOBALS.PHOTOS[1].media[idx].photo)
     return (
@@ -60,14 +56,14 @@ class AthleteProfile extends Component {
       </View>
     );
   }
-                 
+// ======================================================================== RENDERER ========================================================================                 
   render() {
     let imgPath;
-    if (this.props.athlete.style == 'weightlifter'){
+    if (this.props.athlete.style.toLowerCase() == 'weightlifter'){
       imgPath = <Image style={{height:40, width: 40, alignSelf: 'center', zIndex: 10}}  indicator={Progress.CircleSnail} indicatorProps={{ size: 40, color: GLOBALS.COLORS.ALT1 }} source={require('../../images/weightlifter.png')}/>;
-    } else if (this.props.athlete.style == 'bodybuilder') {
+    } else if (this.props.athlete.style.toLowerCase() == 'bodybuilder') {
       imgPath = <Image style={{height:40, width: 40, alignSelf: 'center', zIndex: 10}}  indicator={Progress.CircleSnail} indicatorProps={{ size: 40, color: GLOBALS.COLORS.ALT1 }} source={require('../../images/bodybuilder.png')}/>;
-    } else if (this.props.athlete.style == 'powerlifter') {
+    } else if (this.props.athlete.style.toLowerCase() == 'powerlifter') {
       imgPath = <Image style={{height:40, width: 40, alignSelf: 'center', zIndex: 10}} indicator={Progress.CircleSnail} indicatorProps={{ size: 40, color: GLOBALS.COLORS.ALT1 }} source={require('../../images/powerlifter.png')}/>;
     };    
     return (
@@ -217,7 +213,7 @@ class AthleteProfile extends Component {
     )
   }
 }
-
+// ======================================================================== STYLESHEET ========================================================================
 const styles = StyleSheet.create({
   image: {
     width: width,

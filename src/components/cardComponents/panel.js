@@ -6,12 +6,10 @@ import SwipeCards from 'react-native-swipe-cards';
 import LinearGradient from 'react-native-linear-gradient';
 var {height, width} = Dimensions.get('window');
 import GLOBALS from '../../globals'
-// const { Surface } = require("gl-react-native"); // in React Native context
-// import {Hudson} from "gl-react-instagramfilters";
 
 
 class Panel extends Component {
-
+// ======================================================================== RENDERER ========================================================================
   render() {
     let imgPath;
     if (this.props.style == 'weightlifter'){
@@ -42,9 +40,8 @@ class Panel extends Component {
     )
   }
 }
-
+// ======================================================================== STYLESHEET ========================================================================
 const styles = StyleSheet.create({
-
   thumbnail: {
     flex: 1,
     borderRadius: 5,
@@ -55,9 +52,6 @@ const styles = StyleSheet.create({
     width: width/1.1,
     height: height/1.4,
     resizeMode: 'cover',
-//     borderWidth: 1,
-//     borderRadius: 5,
-  
   },
   title: {
     fontSize: 20,

@@ -9,16 +9,16 @@ import GLOBALS from '../globals';
 
 
 class InitScreen extends Component {
-
+// -------------------------------------------------------------  
   constructor(props) {
     super(props)
     this.state = {}
   }
-
+// ======================================================================== RENDERER ========================================================================
   render() {
     return (
 
-              <ExNavigator initialRoute={Router.getInitialRoute(navigator)} 
+              <ExNavigator initialRoute={Router.getSettingsRoute(GLOBALS.user)} 
           style={{ flex: 1, backgroundColor: 'black'}} 
           navigationBarStyle={{backgroundColor: 'transparent', borderBottomWidth:0}} 
           barButtonIconStyle={{tintColor: GLOBALS.COLORS.ALT1,zIndex: 0}} 
@@ -37,6 +37,7 @@ class InitScreen extends Component {
     )
   }
 }
+// ======================================================================== STYLESHEET ========================================================================
 const styles = StyleSheet.create({
   navbar: {
     backgroundColor: 'rgba(26, 28, 28, 0.0)', 

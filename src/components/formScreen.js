@@ -7,14 +7,11 @@ import Tabs from 'react-native-tabs';
 import GLOBALS from '../globals';
 import Router from '../router.js'
 class FormScreen extends Component {
-
-  static propTypes = {}
-
-  static defaultProps = {}
+// -------------------------------------------------------------    
   changeTab (selectedTab) {
     this.setState({selectedTab})
   }
-
+// -------------------------------------------------------------  
   constructor(props) {
     super(props)
     this.state = {
@@ -22,11 +19,11 @@ class FormScreen extends Component {
       page: 'athlete'
     };
   }
-  
+// -------------------------------------------------------------  
   changePage(){
     
   }
-
+// ======================================================================== RENDERER ========================================================================
   render() {
     return (
       <View style={styles.mainbox}>
@@ -42,6 +39,7 @@ class FormScreen extends Component {
     )
   }
 }
+// ======================================================================== STYLESHEET ========================================================================
 const styles = StyleSheet.create({
   toptabtext: {
     color:'white', 

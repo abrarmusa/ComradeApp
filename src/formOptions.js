@@ -59,7 +59,7 @@ module.exports = {
       style: {
         placeholder: 'Your Training Style',
         placeholderTextColor:GLOBALS.COLORS.ALT1,
-        nullOption: {value: '', text: 'Pick your type of training'}
+        nullOption: {value: '', text: 'Your sport'}
       },
       certifications: {
         placeholder: 'Your certifications eg. BCWA certification',
@@ -75,9 +75,9 @@ module.exports = {
     }
   },
   liftStyles:{
-    Weightlifting: 'Weightlifting',
-    Powerlifting: 'Powerlifting',
-    Bodybuilding: 'Bodybuilding'
+    Weightlifter: 'Weightlifter',
+    Powerlifter: 'Powerlifter',
+    Bodybuilder: 'Bodybuilder',
   },
   interests: {
     Comrade: 'Comrade',

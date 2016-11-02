@@ -7,36 +7,41 @@ const FBSDK = require('react-native-fbsdk');
 const { GraphRequest, GraphRequestManager } = FBSDK;
 import Router from '../router';
 import Auth from '../auth';
+import Firebase from '../firebase'
 var {height, width} = Dimensions.get('window');
 FBLoginManager.setLoginBehavior(FBLoginManager.LoginBehaviors.Native)
 
   
 class StartScreen extends Component {
+// -------------------------------------------------------------  
     constructor(props) {
       super(props)
       this.state = {
         connection: false
       }
     }
-  
+// ------------------------------------------------------------- 
   _responseInfoCallback(error: ?Object, result: ?Object) {
     var that = this;
     if (error) {
       alert('Error fetching data: ' + error.toString());
     } else {
-//       console.log('Success fetching data: ');
-      console.log(result);
-      Auth.firebaseAuthenticate(result.id, function(checker){
-        if (checker){
-          let route = Router.getHomeRoute();      
-          that.props.navigator.push(route);
-        } else {
-          var route = Router.getFormRoute(result);
-          that.props.navigator.push(route);
-        }
-      })
+      Firebase.initializeFirebase(function(){
+        Firebase.firebaseAuthenticate(result.id, function(user){
+          if (user){
+            console.log(user);
+            let route = Router.getHomeRoute(user);      
+            that.props.navigator.push(route);
+          } else {
+            var route = Router.getFormRoute(result);
+            that.props.navigator.push(route);
+          }
+        })        
+      });
+
     }
   }
+// -------------------------------------------------------------  
   handleConnectivity(isConnected) {
     console.log(isConnected)
     NetInfo.isConnected.removeEventListener(
@@ -48,14 +53,14 @@ class StartScreen extends Component {
     })
     this.logInUser()
   }
-  
+// -------------------------------------------------------------  
   signIn(){ 
     NetInfo.isConnected.addEventListener(
       'change',
       this.handleConnectivity.bind(this)
     );
   }
-  
+// -------------------------------------------------------------  
   logInUser(){
     if (this.state.connection){
       var profileRequestParams = { fields: { string: 'id, name, email, first_name, last_name, gender'}};
@@ -73,7 +78,7 @@ class StartScreen extends Component {
       alert("Please connect to the internet")
     }
   }
-  
+// ======================================================================== RENDERER ========================================================================  
   render() {  
     var _this = this;
     return (
@@ -103,6 +108,7 @@ class StartScreen extends Component {
     )
   }
 }
+// ======================================================================== STYLESHEET ========================================================================
 const styles = StyleSheet.create({
   mainbox: {
     flex: 1,

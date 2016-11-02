@@ -5,6 +5,7 @@ import { Icon } from 'react-native-elements';
 import Router from '../../router';
 import GLOBALS from '../../globals';
 import Auth from '../../auth';
+import Firebase from '../../firebase';
 import FormOptions from '../../formOptions';
 import Helpers from '../../helpers';
 import ImagePicker from 'react-native-image-picker';
@@ -25,8 +26,8 @@ var Athlete = t.struct({
   gender: t.String,
   gym: t.String,
   style: liftStyles,
-  certifications: t.String,
-  achievements: t.String,
+  certifications: t.maybe(t.String),
+  achievements: t.maybe(t.String),
   gender: t.String,
   fb_id: t.String,
   interested_in: interests
@@ -38,7 +39,17 @@ class AthleteSignupForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      avatarSource: null
+      avatarSource: null,
+      formDefaults: {
+        name: this.props.user.name,
+        email: this.props.user.email,
+        gender: this.props.user.gender,
+        fb_id: this.props.user.id,
+        height: "5ft 9in",
+        weight: "81kg",
+        gym: "UBC BirdCoop",
+        certifications: "BCWA Certified Coach"
+      }
     }
   }
 // -------------------------------------------------------------
@@ -55,31 +66,31 @@ class AthleteSignupForm extends Component {
         type: 'image/jpeg',
         name: (this.props.user.id + '_profile_pic.jpg'),
     };
-    console.log("pressed");
-    Auth.firebaseUpload(photo, function(checker){
-      if (checker) {
-        console.log(checker);
-        console.log(value);
-        if (value) { // if validation fails, value will be null
-          console.log(value); // value here is an instance of Person
-          fb_id = that.props.user.id;
-          Helpers.dataSanitizer(value, function(res){
-            res["profile_pic"] = photo;
-            Auth.firebasePush("users", res, function(){
-              console.log("Pushed into firebase");
-              let route = Router.getHomeRoute();
-              that.props.navigator.replacePrevious(route);
-              that.props.navigator.pop();        
-            })        
-          })
-        } else {
-          alert("Please fill in the form");
-        }        
-      } else {
-        alert("Error encountered");
-      }
-    });
-
+    if (value){
+      Auth.instagramAuthenticate(function(result){
+        Firebase.firebaseUpload(photo, function(checker){
+          if (checker) {
+            fb_id = that.props.user.id;
+            Helpers.dataSanitizer(value, function(res){            
+              console.log(result);
+              console.log(checker);
+              res["photos"] = result;
+              res["profile_pic_url"] = checker;
+              Firebase.firebasePush("users", res, function(){
+                console.log("Pushed into firebase");
+                let route = Router.getHomeRoute();
+                that.props.navigator.replacePrevious(route);
+                that.props.navigator.pop();        
+              })                
+            })
+          } else {
+            alert("Error encountered");
+          }
+        });           
+      })
+    } else {
+      alert("Please fill in the form");
+    }
   }  
 // -------------------------------------------------------------
   selectPhotoTapped() {
@@ -90,19 +101,15 @@ class AthleteSignupForm extends Component {
       storageOptions: {
         skipBackup: true
       }
-    };        
+    };
     ImagePicker.showImagePicker(options, (response) => {
-      console.log('Response = ', response);
       if (response.didCancel) {
         console.log('User cancelled photo picker');
-      }
-      else if (response.error) {
+      } else if (response.error) {
         console.log('ImagePicker Error: ', response.error);
-      }
-      else if (response.customButton) {
+      } else if (response.customButton) {
         console.log('User tapped custom button: ', response.customButton);
-      }
-      else {
+      } else {
         var source;
         if (Platform.OS === 'android') {
           source = {uri: response.uri, isStatic: true};
@@ -134,7 +141,7 @@ class AthleteSignupForm extends Component {
     <Form
     ref="form"
     type={Athlete}
-    value={{name: this.props.user.name, email: this.props.user.email, gender: this.props.user.gender, fb_id: this.props.user.id}}
+    value={this.state.formDefaults}
     options={athlete_options}
     />
     <TouchableHighlight style={styles.button} onPress={this.onPress.bind(this)} underlayColor={GLOBALS.COLORS.ALT1}>

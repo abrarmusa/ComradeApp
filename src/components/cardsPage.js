@@ -15,6 +15,7 @@ var {height, width} = Dimensions.get('window');
 
 
 class CardsPage extends Component {
+// -------------------------------------------------------------    
   constructor(props) {
     super(props)
     this.state = {
@@ -23,27 +24,29 @@ class CardsPage extends Component {
       selectedIndex: 2,
     }
   }
-  
+// -------------------------------------------------------------    
   clickHandle (card){
-    Auth.instagramAuthenticate()
     console.log(card)
   }
+// -------------------------------------------------------------    
   handleYup (card) {
     console.log("yup")
   }
+// -------------------------------------------------------------    
   handleNope (card) {
     console.log("nope")
   }
-  
+// -------------------------------------------------------------    
   yesButton(){
     var that = this.refs.cardswipe;
     that._forceRightSwipe()
   }
-  
+// -------------------------------------------------------------    
   noButton(){
     var that = this.refs.cardswipe;
     that._forceLeftSwipe()
   }
+// -------------------------------------------------------------    
   cardRemoved (index) {
     console.log(`The index is ${index}`);
     let CARD_REFRESH_LIMIT = 3
@@ -59,6 +62,7 @@ class CardsPage extends Component {
       }
     }
   }
+ // -------------------------------------------------------------   
   onPress() {
     // call getValue() to get the values of the form
     var value = this.refs["form"].getValue();
@@ -77,12 +81,12 @@ class CardsPage extends Component {
 //     })
     }
   }
+// -------------------------------------------------------------    
   buttonPress(){
     console.log('pressed button');
   }
-  
+// ======================================================================== RENDERER ========================================================================  
   render() {
-
     const buttons = ['Hello', 'World', 'Buttons'];
     return (
       <View>
@@ -118,7 +122,7 @@ class CardsPage extends Component {
     )
   }
 }
-
+// ======================================================================== STYLESHEET ========================================================================
 const styles = StyleSheet.create({
   buttonsect: {
     zIndex: 300,

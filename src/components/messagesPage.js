@@ -11,7 +11,7 @@ class MessagesPage extends Component {
     super(props)
     this.state = {}
   }
-
+// ======================================================================== RENDERER ========================================================================
   render() {
     return (
       <View>

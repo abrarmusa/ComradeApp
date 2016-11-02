@@ -59,4 +59,60 @@ module.exports = {
     }],
   }
   ],  
+   user: {
+    "certifications" : "BCWA Certified Coach",
+    "email" : "abrar.musa.89@gmail.com",
+    "fb_id" : "10153582744882696",
+    "gender" : "male",
+     "goals" : "To achieve a 140kg snatch and a 160kg C&j",
+     "achievements" : "100kg c&j 80kg snatch",
+    "gym" : "UBC BirdCoop",
+    "height" : "5ft 9in",
+    "interested_in" : "Comrade",
+    "name" : "Abrar Musa",
+    "photos" : [ {
+      "caption" : "\uD83D\uDE3D\uD83D\uDCA4",
+      "image" : "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13298206_290703447947208_890097255_n.jpg?ig_cache_key=MTI2Nzk2OTg0OTExNzI0NDQ0NQ%3D%3D.2",
+      "thumbnail" : "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/13298206_290703447947208_890097255_n.jpg?ig_cache_key=MTI2Nzk2OTg0OTExNzI0NDQ0NQ%3D%3D.2"
+    }, {
+      "caption" : "#broseph",
+      "image" : "https://scontent.cdninstagram.com/t51.2885-15/s480x480/e35/13249866_223389094720079_1269373387_n.jpg?ig_cache_key=MTI1ODI5MzIzMjAzMTg5MTEyNQ%3D%3D.2",
+      "thumbnail" : "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/13249866_223389094720079_1269373387_n.jpg?ig_cache_key=MTI1ODI5MzIzMjAzMTg5MTEyNQ%3D%3D.2"
+    }, {
+      "caption" : "Everyday is #legday",
+      "image" : "https://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/13116573_1779137475654180_1023362533_n.jpg?ig_cache_key=MTI1NjcwMjYxODkyMDE1NjgwNA%3D%3D.2",
+      "thumbnail" : "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c0.134.1080.1080/13116573_1779137475654180_1023362533_n.jpg?ig_cache_key=MTI1NjcwMjYxODkyMDE1NjgwNA%3D%3D.2.c"
+    }, {
+      "caption" : "As soon as you get excited for summer, Toronto slaps you across the face with some snow.",
+      "image" : "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13249839_234404620267136_1813069917_n.jpg?ig_cache_key=MTI1MDg0OTA0NzUzNjMzNjYwMQ%3D%3D.2",
+      "thumbnail" : "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/13249839_234404620267136_1813069917_n.jpg?ig_cache_key=MTI1MDg0OTA0NzUzNjMzNjYwMQ%3D%3D.2"
+    }, {
+      "caption" : "",
+      "image" : "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13129837_1767698716797995_1114040350_n.jpg?ig_cache_key=MTI0ODc5MTIwMTUwODM2MDEyMw%3D%3D.2",
+      "thumbnail" : "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/13129837_1767698716797995_1114040350_n.jpg?ig_cache_key=MTI0ODc5MTIwMTUwODM2MDEyMw%3D%3D.2"
+    }, {
+      "caption" : "Hair loss fml",
+      "image" : "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13167441_1616557272003506_523834044_n.jpg?ig_cache_key=MTI0NDI1NDExMjIyNTgyMDA0MQ%3D%3D.2",
+      "thumbnail" : "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/13167441_1616557272003506_523834044_n.jpg?ig_cache_key=MTI0NDI1NDExMjIyNTgyMDA0MQ%3D%3D.2"
+    }, {
+      "caption" : "Hello allergies",
+      "image" : "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13188104_1624534474536234_1520796244_n.jpg?ig_cache_key=MTI0MzU5OTY1Nzk1MjIxNDQ3NQ%3D%3D.2",
+      "thumbnail" : "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/13188104_1624534474536234_1520796244_n.jpg?ig_cache_key=MTI0MzU5OTY1Nzk1MjIxNDQ3NQ%3D%3D.2"
+    }, {
+      "caption" : "Gloomy Day",
+      "image" : "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12328293_1142275269125396_1677532402_n.jpg?ig_cache_key=MTIyMjE1MDE4NDM0NDYxNjYxMg%3D%3D.2",
+      "thumbnail" : "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/12328293_1142275269125396_1677532402_n.jpg?ig_cache_key=MTIyMjE1MDE4NDM0NDYxNjYxMg%3D%3D.2"
+    }, {
+      "caption" : "First time running in a whole year",
+      "image" : "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/12519240_465768483610275_1708405887_n.jpg?ig_cache_key=MTE3ODAzMDQ3NDk3NjE2NDk3Ng%3D%3D.2",
+      "thumbnail" : "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/12519240_465768483610275_1708405887_n.jpg?ig_cache_key=MTE3ODAzMDQ3NDk3NjE2NDk3Ng%3D%3D.2"
+    }, {
+      "caption" : "Hey Ben @hodinkee . What's your opinion on this 3510.82 Speedmaster reduced?",
+      "image" : "https://scontent.cdninstagram.com/t51.2885-15/e15/11049411_429699600514260_1422714859_n.jpg?ig_cache_key=OTM4MDQwNTgyNDExNTE3OTAx.2",
+      "thumbnail" : "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e15/11049411_429699600514260_1422714859_n.jpg?ig_cache_key=OTM4MDQwNTgyNDExNTE3OTAx.2"
+    } ],
+    "profile_pic_url" : "https://firebasestorage.googleapis.com/v0/b/comrade-dbd4b.appspot.com/o/images%2F10153582744882696_profile_pic.jpg?alt=media&token=1563c0b3-ade5-4c58-8e8d-b3e7fbe913d3",
+    "style" : "Weightlifter",
+    "weight" : "81kg"
+  }
 };

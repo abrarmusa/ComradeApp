@@ -9,22 +9,9 @@ import { Button,Icon } from 'react-native-elements'
 import ExNavigator from '@exponent/react-native-navigator';
 import ExSceneConfigs from '@exponent/react-native-navigator';
 import GLOBALS from './globals';
-// Switch to ExNavigation
-// import {
-//   createRouter
-// } from '@exponent/ex-navigation';
-
-// const Router = createRouter(() => ({
-//   start: () => StartScreen,
-//   form: () => FormScreen,
-//   home: () => HomeScreen
-// }))
-
-
 
 let Router = {
-  
-//   MAIN PAGE ROUTE
+// ======================================================================== LANDING ========================================================================
   getInitialRoute(navigator) {
     console.log('Getting Initial route');
     return {
@@ -34,8 +21,7 @@ let Router = {
       }
     };
   },
-
-// FORM PAGE ROUTE
+// ======================================================================== SIGNUP FORM ========================================================================
   getFormRoute(user) {
     console.log('Getting form route');
     
@@ -49,13 +35,12 @@ let Router = {
       }  
     };
   },
-  
-//   HOME PAGE ROUTE
-  getHomeRoute(navigator){
+// ======================================================================== HOME ========================================================================
+  getHomeRoute(user){
     console.log('Getting Home route');
     return {
       renderScene(navigator) {
-        return <CardsPage navigator={navigator} />;
+        return <CardsPage navigator={navigator} user={user} />;
       },
       
       renderTitle() {
@@ -73,7 +58,7 @@ let Router = {
                 name='person'
                 type='octicon'
                  underlayColor='red'
-                 onPress={() => navigator.push(Router.getSettingsRoute())}
+                 onPress={() => navigator.push(Router.getSettingsRoute(user))}
                 iconStyle={{color:GLOBALS.COLORS.ALT1, margin: 9}}
               />
           </View>          
@@ -98,7 +83,7 @@ let Router = {
     }
 
   },
-  
+// ======================================================================== ATHLETE PROFILE ========================================================================
   getAthleteProfile(athlete){
       return {
         renderScene(navigator) {
@@ -126,11 +111,11 @@ let Router = {
         },      
     }
   },
-  
-   getSettingsRoute(){
+// ======================================================================== SETTINGS ========================================================================
+   getSettingsRoute(user){
       return {
         renderScene(navigator) {
-          return <SettingsPage navigator={navigator}/>;
+          return <SettingsPage navigator={navigator} user={user} />;
         },
         
         renderTitle() {
@@ -168,6 +153,8 @@ let Router = {
     }
   } 
 };
+
+// ======================================================================== STYLESHEET ========================================================================
 const styles = StyleSheet.create({
   navbarstyle: {
     backgroundColor: 'red'
